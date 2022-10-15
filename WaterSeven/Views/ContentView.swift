@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ScrollView {
+            WSTodayWaterView()
+                .frame(height: size.height / 2.5)
+        }.background(Color("background"))
     }
 }
 
