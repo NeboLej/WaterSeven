@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WSHomeView.swift
 //  WaterSeven
 //
 //  Created by Nebo on 15.10.2022.
@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WSHomeView: View {
+    
+    let viewModel: WSHomeViewModel
+    
     var body: some View {
         ScrollView {
             WSTodayWaterView()
@@ -16,8 +19,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WSHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WSHomeView(viewModel: WSHomeViewModel(serviceFactory: WSServiceFactoryMock()))
     }
 }

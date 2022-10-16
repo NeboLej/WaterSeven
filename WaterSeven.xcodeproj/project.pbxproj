@@ -8,19 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */; };
-		FAF080F428FAFEB7007091B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F328FAFEB7007091B1 /* ContentView.swift */; };
+		FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F328FAFEB7007091B1 /* WSHomeView.swift */; };
 		FAF080F628FAFEBB007091B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF080F528FAFEBB007091B1 /* Assets.xcassets */; };
 		FAF080F928FAFEBB007091B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF080F828FAFEBB007091B1 /* Preview Assets.xcassets */; };
 		FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810328FB06F8007091B1 /* WSTodayWaterView.swift */; };
+		FAF0810728FC2BCC007091B1 /* WSFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810628FC2BCC007091B1 /* WSFront.swift */; };
+		FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810C28FC2D8F007091B1 /* WSServicesFactory.swift */; };
+		FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810E28FC2DE1007091B1 /* WSService.swift */; };
+		FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811028FC2F00007091B1 /* WSRepository.swift */; };
+		FAF0811328FC2F1E007091B1 /* WSReposlitoryLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811228FC2F1E007091B1 /* WSReposlitoryLocal.swift */; };
+		FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811428FC3096007091B1 /* WSServiceFactoryProtocol.swift */; };
+		FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811628FC313E007091B1 /* WSViewModel.swift */; };
+		FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */; };
+		FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAF080EE28FAFEB7007091B1 /* WaterSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSevenApp.swift; sourceTree = "<group>"; };
-		FAF080F328FAFEB7007091B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FAF080F328FAFEB7007091B1 /* WSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeView.swift; sourceTree = "<group>"; };
 		FAF080F528FAFEBB007091B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF080F828FAFEBB007091B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAF0810328FB06F8007091B1 /* WSTodayWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTodayWaterView.swift; sourceTree = "<group>"; };
+		FAF0810628FC2BCC007091B1 /* WSFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSFront.swift; sourceTree = "<group>"; };
+		FAF0810C28FC2D8F007091B1 /* WSServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServicesFactory.swift; sourceTree = "<group>"; };
+		FAF0810E28FC2DE1007091B1 /* WSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSService.swift; sourceTree = "<group>"; };
+		FAF0811028FC2F00007091B1 /* WSRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRepository.swift; sourceTree = "<group>"; };
+		FAF0811228FC2F1E007091B1 /* WSReposlitoryLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReposlitoryLocal.swift; sourceTree = "<group>"; };
+		FAF0811428FC3096007091B1 /* WSServiceFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServiceFactoryProtocol.swift; sourceTree = "<group>"; };
+		FAF0811628FC313E007091B1 /* WSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSViewModel.swift; sourceTree = "<group>"; };
+		FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeViewModel.swift; sourceTree = "<group>"; };
+		FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServiceFactoryMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +74,10 @@
 				FAF0810128FAFF65007091B1 /* Models */,
 				FAF080FF28FAFF4A007091B1 /* Views */,
 				FAF0810228FAFF75007091B1 /* ViewModels */,
+				FAF0810928FC2D09007091B1 /* Repositories */,
+				FAF0810828FC2CF9007091B1 /* Services */,
 				FAF0810528FB0DA2007091B1 /* Resourses */,
 				FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */,
-				FAF080F528FAFEBB007091B1 /* Assets.xcassets */,
 				FAF080F728FAFEBB007091B1 /* Preview Content */,
 			);
 			path = WaterSeven;
@@ -68,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF080F828FAFEBB007091B1 /* Preview Assets.xcassets */,
+				FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -75,7 +95,7 @@
 		FAF080FF28FAFF4A007091B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAF080F328FAFEB7007091B1 /* ContentView.swift */,
+				FAF080F328FAFEB7007091B1 /* WSHomeView.swift */,
 				FAF0810028FAFF58007091B1 /* Components */,
 			);
 			path = Views;
@@ -99,6 +119,8 @@
 		FAF0810228FAFF75007091B1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FAF0811628FC313E007091B1 /* WSViewModel.swift */,
+				FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -106,8 +128,45 @@
 		FAF0810528FB0DA2007091B1 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				FAF080F528FAFEBB007091B1 /* Assets.xcassets */,
+				FAF0810628FC2BCC007091B1 /* WSFront.swift */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		FAF0810828FC2CF9007091B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0811428FC3096007091B1 /* WSServiceFactoryProtocol.swift */,
+				FAF0810C28FC2D8F007091B1 /* WSServicesFactory.swift */,
+				FAF0810E28FC2DE1007091B1 /* WSService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FAF0810928FC2D09007091B1 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0810B28FC2D5E007091B1 /* Local */,
+				FAF0810A28FC2D4D007091B1 /* Network */,
+				FAF0811028FC2F00007091B1 /* WSRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FAF0810A28FC2D4D007091B1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FAF0810B28FC2D5E007091B1 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0811228FC2F1E007091B1 /* WSReposlitoryLocal.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +239,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF080F428FAFEB7007091B1 /* ContentView.swift in Sources */,
+				FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */,
+				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
 				FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */,
+				FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */,
+				FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */,
+				FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */,
+				FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */,
+				FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */,
+				FAF0811328FC2F1E007091B1 /* WSReposlitoryLocal.swift in Sources */,
 				FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */,
+				FAF0810728FC2BCC007091B1 /* WSFront.swift in Sources */,
+				FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
