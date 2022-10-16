@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct WaterSevenApp: App {
+    
+    let serviceFactory: WSServiceFactoryProtocol
+    
+    init() {
+        serviceFactory = WSServicesFactory()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WSHomeView(viewModel: WSHomeViewModel(serviceFactory: serviceFactory))
         }
     }
 }
