@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */; };
 		FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */; };
 		FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F328FAFEB7007091B1 /* WSHomeView.swift */; };
 		FAF080F628FAFEBB007091B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF080F528FAFEBB007091B1 /* Assets.xcassets */; };
@@ -21,9 +22,13 @@
 		FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811628FC313E007091B1 /* WSViewModel.swift */; };
 		FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */; };
 		FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */; };
+		FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF081262900997B007091B1 /* WSPlantCellView.swift */; };
+		FAF0812B29016E50007091B1 /* WSPlantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0812A29016E50007091B1 /* WSPlantVM.swift */; };
+		FAF0812D290170ED007091B1 /* WSButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0812C290170ED007091B1 /* WSButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRoundedCornersShape.swift; sourceTree = "<group>"; };
 		FAF080EE28FAFEB7007091B1 /* WaterSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSevenApp.swift; sourceTree = "<group>"; };
 		FAF080F328FAFEB7007091B1 /* WSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeView.swift; sourceTree = "<group>"; };
@@ -39,6 +44,9 @@
 		FAF0811628FC313E007091B1 /* WSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSViewModel.swift; sourceTree = "<group>"; };
 		FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeViewModel.swift; sourceTree = "<group>"; };
 		FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServiceFactoryMock.swift; sourceTree = "<group>"; };
+		FAF081262900997B007091B1 /* WSPlantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantCellView.swift; sourceTree = "<group>"; };
+		FAF0812A29016E50007091B1 /* WSPlantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantVM.swift; sourceTree = "<group>"; };
+		FAF0812C290170ED007091B1 /* WSButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +112,12 @@
 		FAF0810028FAFF58007091B1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FAF0812E290179F4007091B1 /* Ext */,
 				FAF0810328FB06F8007091B1 /* WSTodayWaterView.swift */,
+				FAF081262900997B007091B1 /* WSPlantCellView.swift */,
+				FAF0812A29016E50007091B1 /* WSPlantVM.swift */,
+				FAF0812C290170ED007091B1 /* WSButtons.swift */,
+				FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -167,6 +180,13 @@
 				FAF0811228FC2F1E007091B1 /* WSReposlitoryLocal.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		FAF0812E290179F4007091B1 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,11 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */,
 				FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */,
 				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
 				FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */,
 				FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */,
 				FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */,
+				FAF0812B29016E50007091B1 /* WSPlantVM.swift in Sources */,
 				FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */,
 				FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */,
 				FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */,
@@ -251,6 +273,8 @@
 				FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */,
 				FAF0810728FC2BCC007091B1 /* WSFront.swift in Sources */,
 				FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */,
+				FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */,
+				FAF0812D290170ED007091B1 /* WSButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

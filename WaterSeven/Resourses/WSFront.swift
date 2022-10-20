@@ -11,5 +11,6 @@ class WSFront {
     
     static let medium = "AvenirNext-Medium"
     static let light = "AvenirNext-Light"
+    static let regular = "AvenirNext-Regular"
     
 }
