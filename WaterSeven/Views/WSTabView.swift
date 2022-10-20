@@ -12,7 +12,29 @@ struct WSTabView: View {
     @State var selectionTab = 1
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selectionTab) {
+            WSAllPlantsView()
+                .tabItem {
+                Image(systemName: "list.bullet")
+                Text("мои растения")
+            }.tag(0)
+            WSHomeView(viewModel: WSHomeViewModel())
+                .tabItem {
+                Image(systemName: "house")
+                Text("главная")
+            }.tag(1)
+            WSSettingsView()
+                .tabItem {
+                Image(systemName: "gearshape")
+                Text("настройки")
+            }.tag(2)
+            
+        }
+        .onAppear() {
+            UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+        }
+        .accentColor(Color("backgroundFirst"))
+        .font(.headline)
     }
 }
 
