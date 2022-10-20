@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WSPlantVM {
+class WSPlantVM: Identifiable {
     
     let name: String
     let image: String

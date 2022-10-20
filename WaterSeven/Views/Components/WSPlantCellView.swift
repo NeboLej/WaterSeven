@@ -41,9 +41,8 @@ struct WSPlantCellView: View {
             }, label: Text("Полил") )
             .padding(.trailing, 13)
         }
-        .frame(width: .infinity, height: 85)
-        .background(Color("backgroundFirst"))
-        .corn
+        .frame(height: 85)
+        .background(WSRoundedCornersShape(corners: [.topRight, .bottomRight], radius: 27).fill(Color("backgroundFirst")))
     }
 }
 
