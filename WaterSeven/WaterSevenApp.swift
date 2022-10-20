@@ -17,7 +17,7 @@ struct WaterSevenApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            WSHomeView(viewModel: WSHomeViewModel(serviceFactory: serviceFactory))
+            WSHomeView(viewModel: WSHomeViewModel())
         }
     }
 }

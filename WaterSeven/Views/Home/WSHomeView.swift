@@ -26,6 +26,6 @@ struct WSHomeView: View {
 
 struct WSHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WSHomeView(viewModel: WSHomeViewModel(serviceFactory: WSServiceFactoryMock()))
+        WSHomeView(viewModel: WSHomeViewModel())
     }
 }

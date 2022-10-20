@@ -14,7 +14,6 @@ class WSHomeViewModel: WSViewModel {
                                 .init(name: "Борщевик", image: "plant1", comment: "Нужно избаваться"),
                                 .init(name: "Дуб", image: "plant2", comment: "Не более ведра"),
                                 .init(name: "Травка муравка", image: "plant1", comment: ""),
-                                .init(name: "Привет Андрей", image: "plant2", comment: "Ну здравтсвуй")
-                                
-    ]
+                                .init(name: "Привет Андрей", image: "plant2", comment: "Ну здравтсвуй")]
+    
 }

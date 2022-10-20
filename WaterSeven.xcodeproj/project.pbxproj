@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */; };
+		FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D179E29018429006BB413 /* WSAllPlantsViewModel.swift */; };
+		FA9D17A129018449006BB413 /* WSAllPlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A029018449006BB413 /* WSAllPlantsView.swift */; };
+		FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A32901848A006BB413 /* WSSettingsViewModel.swift */; };
+		FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A529018498006BB413 /* WSSettingsView.swift */; };
+		FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A7290184F8006BB413 /* WSTabView.swift */; };
 		FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */; };
 		FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F328FAFEB7007091B1 /* WSHomeView.swift */; };
 		FAF080F628FAFEBB007091B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF080F528FAFEBB007091B1 /* Assets.xcassets */; };
@@ -29,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRoundedCornersShape.swift; sourceTree = "<group>"; };
+		FA9D179E29018429006BB413 /* WSAllPlantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSAllPlantsViewModel.swift; sourceTree = "<group>"; };
+		FA9D17A029018449006BB413 /* WSAllPlantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSAllPlantsView.swift; sourceTree = "<group>"; };
+		FA9D17A32901848A006BB413 /* WSSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSettingsViewModel.swift; sourceTree = "<group>"; };
+		FA9D17A529018498006BB413 /* WSSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSettingsView.swift; sourceTree = "<group>"; };
+		FA9D17A7290184F8006BB413 /* WSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTabView.swift; sourceTree = "<group>"; };
 		FAF080EE28FAFEB7007091B1 /* WaterSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSevenApp.swift; sourceTree = "<group>"; };
 		FAF080F328FAFEB7007091B1 /* WSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeView.swift; sourceTree = "<group>"; };
@@ -60,6 +70,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA9D179A290181C1006BB413 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */,
+				FAF080F328FAFEB7007091B1 /* WSHomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FA9D179B29018227006BB413 /* PlantCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0812A29016E50007091B1 /* WSPlantVM.swift */,
+				FAF081262900997B007091B1 /* WSPlantCellView.swift */,
+			);
+			path = PlantCell;
+			sourceTree = "<group>";
+		};
+		FA9D179C29018248006BB413 /* TodayWater */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0810328FB06F8007091B1 /* WSTodayWaterView.swift */,
+			);
+			path = TodayWater;
+			sourceTree = "<group>";
+		};
+		FA9D179D290183F9006BB413 /* AllPlants */ = {
+			isa = PBXGroup;
+			children = (
+				FA9D179E29018429006BB413 /* WSAllPlantsViewModel.swift */,
+				FA9D17A029018449006BB413 /* WSAllPlantsView.swift */,
+			);
+			path = AllPlants;
+			sourceTree = "<group>";
+		};
+		FA9D17A229018475006BB413 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA9D17A32901848A006BB413 /* WSSettingsViewModel.swift */,
+				FA9D17A529018498006BB413 /* WSSettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FA9D17A929018508006BB413 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0811628FC313E007091B1 /* WSViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		FAF080E528FAFEB7007091B1 = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +143,6 @@
 			children = (
 				FAF0810128FAFF65007091B1 /* Models */,
 				FAF080FF28FAFF4A007091B1 /* Views */,
-				FAF0810228FAFF75007091B1 /* ViewModels */,
 				FAF0810928FC2D09007091B1 /* Repositories */,
 				FAF0810828FC2CF9007091B1 /* Services */,
 				FAF0810528FB0DA2007091B1 /* Resourses */,
@@ -103,7 +164,10 @@
 		FAF080FF28FAFF4A007091B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAF080F328FAFEB7007091B1 /* WSHomeView.swift */,
+				FA9D17A7290184F8006BB413 /* WSTabView.swift */,
+				FA9D179A290181C1006BB413 /* Home */,
+				FA9D179D290183F9006BB413 /* AllPlants */,
+				FA9D17A229018475006BB413 /* Settings */,
 				FAF0810028FAFF58007091B1 /* Components */,
 			);
 			path = Views;
@@ -112,10 +176,10 @@
 		FAF0810028FAFF58007091B1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FA9D17A929018508006BB413 /* Base */,
+				FA9D179C29018248006BB413 /* TodayWater */,
+				FA9D179B29018227006BB413 /* PlantCell */,
 				FAF0812E290179F4007091B1 /* Ext */,
-				FAF0810328FB06F8007091B1 /* WSTodayWaterView.swift */,
-				FAF081262900997B007091B1 /* WSPlantCellView.swift */,
-				FAF0812A29016E50007091B1 /* WSPlantVM.swift */,
 				FAF0812C290170ED007091B1 /* WSButtons.swift */,
 				FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */,
 			);
@@ -127,15 +191,6 @@
 			children = (
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		FAF0810228FAFF75007091B1 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				FAF0811628FC313E007091B1 /* WSViewModel.swift */,
-				FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		FAF0810528FB0DA2007091B1 /* Resourses */ = {
@@ -259,15 +314,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */,
 				FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */,
 				FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */,
+				FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */,
 				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
 				FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */,
+				FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */,
 				FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */,
+				FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */,
 				FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */,
 				FAF0812B29016E50007091B1 /* WSPlantVM.swift in Sources */,
 				FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */,
 				FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */,
+				FA9D17A129018449006BB413 /* WSAllPlantsView.swift in Sources */,
 				FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */,
 				FAF0811328FC2F1E007091B1 /* WSReposlitoryLocal.swift in Sources */,
 				FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */,
