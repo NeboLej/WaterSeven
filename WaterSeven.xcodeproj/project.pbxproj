@@ -13,6 +13,9 @@
 		FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A32901848A006BB413 /* WSSettingsViewModel.swift */; };
 		FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A529018498006BB413 /* WSSettingsView.swift */; };
 		FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A7290184F8006BB413 /* WSTabView.swift */; };
+		FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */; };
+		FAD642282902CED6009E8F98 /* WSNewPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD642272902CED6009E8F98 /* WSNewPlantViewModel.swift */; };
+		FAD6422A2902CEE6009E8F98 /* WSNewPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD642292902CEE6009E8F98 /* WSNewPlantView.swift */; };
 		FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */; };
 		FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F328FAFEB7007091B1 /* WSHomeView.swift */; };
 		FAF080F628FAFEBB007091B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF080F528FAFEBB007091B1 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		FA9D17A32901848A006BB413 /* WSSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSettingsViewModel.swift; sourceTree = "<group>"; };
 		FA9D17A529018498006BB413 /* WSSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSettingsView.swift; sourceTree = "<group>"; };
 		FA9D17A7290184F8006BB413 /* WSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTabView.swift; sourceTree = "<group>"; };
+		FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImagePickerView.swift; sourceTree = "<group>"; };
+		FAD642272902CED6009E8F98 /* WSNewPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSNewPlantViewModel.swift; sourceTree = "<group>"; };
+		FAD642292902CEE6009E8F98 /* WSNewPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSNewPlantView.swift; sourceTree = "<group>"; };
 		FAF080EE28FAFEB7007091B1 /* WaterSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSevenApp.swift; sourceTree = "<group>"; };
 		FAF080F328FAFEB7007091B1 /* WSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeView.swift; sourceTree = "<group>"; };
@@ -122,6 +128,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		FAD642262902CEAC009E8F98 /* NewPlant */ = {
+			isa = PBXGroup;
+			children = (
+				FAD642272902CED6009E8F98 /* WSNewPlantViewModel.swift */,
+				FAD642292902CEE6009E8F98 /* WSNewPlantView.swift */,
+			);
+			path = NewPlant;
+			sourceTree = "<group>";
+		};
 		FAF080E528FAFEB7007091B1 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +179,7 @@
 		FAF080FF28FAFF4A007091B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAD642262902CEAC009E8F98 /* NewPlant */,
 				FA9D17A7290184F8006BB413 /* WSTabView.swift */,
 				FA9D179A290181C1006BB413 /* Home */,
 				FA9D179D290183F9006BB413 /* AllPlants */,
@@ -182,6 +198,7 @@
 				FAF0812E290179F4007091B1 /* Ext */,
 				FAF0812C290170ED007091B1 /* WSButtons.swift */,
 				FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */,
+				FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -314,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */,
 				FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */,
 				FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */,
 				FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */,
@@ -332,9 +350,11 @@
 				FAF0811328FC2F1E007091B1 /* WSReposlitoryLocal.swift in Sources */,
 				FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */,
 				FAF0810728FC2BCC007091B1 /* WSFront.swift in Sources */,
+				FAD6422A2902CEE6009E8F98 /* WSNewPlantView.swift in Sources */,
 				FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */,
 				FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */,
 				FAF0812D290170ED007091B1 /* WSButtons.swift in Sources */,
+				FAD642282902CED6009E8F98 /* WSNewPlantViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,9 +486,11 @@
 				DEVELOPMENT_TEAM = 955DP87LHM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "we need camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -496,9 +518,11 @@
 				DEVELOPMENT_TEAM = 955DP87LHM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "we need camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
