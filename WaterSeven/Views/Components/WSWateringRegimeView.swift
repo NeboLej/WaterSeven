@@ -11,7 +11,9 @@ struct WSWateringRegimeView: View {
     
     @State private var isPeriod = true
     @State private var slider = 1.0
-//    @State private var isDay = false
+    @State private var weeks = 1
+
+    private let row = GridItem(.fixed(30))
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -58,12 +60,54 @@ struct WSWateringRegimeView: View {
                     
                     Slider(value: $slider, in: 1...30, step: 1)
                         .tint(Color("background3"))
-
+                    
                 }
             } else {
-                Text("Тут будет календарь")
-                    .frame(maxWidth: .infinity)
-                    .padding()
+                VStack(spacing: 0) {
+                    let calendar = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
+                    LazyHGrid(rows: [row], alignment: .center, spacing: 25) {
+                        ForEach(0..<7) { index in
+                            Text(calendar[index])
+                                .foregroundColor(Color("background3"))
+                        }
+                    }
+                    .padding(.bottom, 1)
+                    
+                    ForEach(0..<weeks, id: \.self) { line in
+                        LazyHGrid(rows: [row], alignment: .center, spacing: 20) {
+                            ForEach(1..<8) { index in
+                                WSCalendarCell(index: index + 7 * line) { index in
+                                    print(index)
+                                }
+                            }
+                        }
+                    }
+ 
+                }
+                .padding(.top, 15)
+                
+                HStack {
+                    if weeks < 4 {
+                        Button {
+                            weeks += 1
+                        } label: {
+                            Image(systemName: "plus")
+                            Text("Добавить неделю")
+                                .font(.custom(WSFont.light, size: 12))
+                        }.foregroundColor(Color("background3"))
+                    }
+  
+                    if weeks > 1 {
+                        Button {
+                            weeks -= 1
+                        } label: {
+                            Image(systemName: "minus")
+                            Text("Убрать неделю")
+                                .font(.custom(WSFont.light, size: 12))
+                        }.foregroundColor(Color("background3"))
+                    }
+                }
+                .padding(.top, 10)
             }
         }
     }

@@ -36,7 +36,7 @@ struct WSNewPlantView: View {
                     .foregroundColor(Color("background3"))
                 Spacer()
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Text("Сохранить")
                         .foregroundColor(Color("background3"))
@@ -96,6 +96,11 @@ struct WSNewPlantView: View {
                         }
                         .padding()
                     }
+                    
+                    WSButtonOne(action: {
+                        dismiss()
+                    }, label: Text("Сохранить").font(.custom(WSFont.regular, size: 18)), textColor: Color("background3"), buttonColor: Color("backgroundFirst"))
+                    .padding()
                    
 
                 }

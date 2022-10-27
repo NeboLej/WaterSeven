@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */; };
 		FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4335D42909C25E000278A1 /* WSTextField.swift */; };
 		FA5DE2A62909E9CA0069CFA5 /* WSLeafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */; };
 		FA5DE2A82909EF350069CFA5 /* WSWateringRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarCell.swift; sourceTree = "<group>"; };
 		FA4335D42909C25E000278A1 /* WSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTextField.swift; sourceTree = "<group>"; };
 		FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSLeafView.swift; sourceTree = "<group>"; };
 		FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSWateringRegimeView.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				FA4335D42909C25E000278A1 /* WSTextField.swift */,
 				FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */,
 				FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */,
+				FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */,
 				FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */,
 				FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */,
+				FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */,
 				FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */,
 				FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */,
 				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
