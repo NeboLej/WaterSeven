@@ -15,6 +15,6 @@ struct WSRoundedCornersShape: Shape {
         let path = UIBezierPath(roundedRect: rect,
                                 byRoundingCorners: corners,
                                 cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
+        return Path(path.cgPath) 
     }
 }
