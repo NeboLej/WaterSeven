@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */; };
+		FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4335D42909C25E000278A1 /* WSTextField.swift */; };
+		FA5DE2A62909E9CA0069CFA5 /* WSLeafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */; };
+		FA5DE2A82909EF350069CFA5 /* WSWateringRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */; };
 		FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */; };
 		FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D179E29018429006BB413 /* WSAllPlantsViewModel.swift */; };
 		FA9D17A129018449006BB413 /* WSAllPlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A029018449006BB413 /* WSAllPlantsView.swift */; };
 		FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A32901848A006BB413 /* WSSettingsViewModel.swift */; };
 		FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A529018498006BB413 /* WSSettingsView.swift */; };
 		FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A7290184F8006BB413 /* WSTabView.swift */; };
+		FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */; };
+		FAD642282902CED6009E8F98 /* WSNewPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD642272902CED6009E8F98 /* WSNewPlantViewModel.swift */; };
+		FAD6422A2902CEE6009E8F98 /* WSNewPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD642292902CEE6009E8F98 /* WSNewPlantView.swift */; };
 		FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */; };
 		FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F328FAFEB7007091B1 /* WSHomeView.swift */; };
 		FAF080F628FAFEBB007091B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF080F528FAFEBB007091B1 /* Assets.xcassets */; };
 		FAF080F928FAFEBB007091B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF080F828FAFEBB007091B1 /* Preview Assets.xcassets */; };
 		FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810328FB06F8007091B1 /* WSTodayWaterView.swift */; };
-		FAF0810728FC2BCC007091B1 /* WSFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810628FC2BCC007091B1 /* WSFront.swift */; };
+		FAF0810728FC2BCC007091B1 /* WSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810628FC2BCC007091B1 /* WSFont.swift */; };
 		FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810C28FC2D8F007091B1 /* WSServicesFactory.swift */; };
 		FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810E28FC2DE1007091B1 /* WSService.swift */; };
 		FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811028FC2F00007091B1 /* WSRepository.swift */; };
@@ -33,19 +40,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarCell.swift; sourceTree = "<group>"; };
+		FA4335D42909C25E000278A1 /* WSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTextField.swift; sourceTree = "<group>"; };
+		FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSLeafView.swift; sourceTree = "<group>"; };
+		FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSWateringRegimeView.swift; sourceTree = "<group>"; };
 		FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRoundedCornersShape.swift; sourceTree = "<group>"; };
 		FA9D179E29018429006BB413 /* WSAllPlantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSAllPlantsViewModel.swift; sourceTree = "<group>"; };
 		FA9D17A029018449006BB413 /* WSAllPlantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSAllPlantsView.swift; sourceTree = "<group>"; };
 		FA9D17A32901848A006BB413 /* WSSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSettingsViewModel.swift; sourceTree = "<group>"; };
 		FA9D17A529018498006BB413 /* WSSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSettingsView.swift; sourceTree = "<group>"; };
 		FA9D17A7290184F8006BB413 /* WSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTabView.swift; sourceTree = "<group>"; };
+		FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImagePickerView.swift; sourceTree = "<group>"; };
+		FAD642272902CED6009E8F98 /* WSNewPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSNewPlantViewModel.swift; sourceTree = "<group>"; };
+		FAD642292902CEE6009E8F98 /* WSNewPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSNewPlantView.swift; sourceTree = "<group>"; };
 		FAF080EE28FAFEB7007091B1 /* WaterSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSevenApp.swift; sourceTree = "<group>"; };
 		FAF080F328FAFEB7007091B1 /* WSHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeView.swift; sourceTree = "<group>"; };
 		FAF080F528FAFEBB007091B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF080F828FAFEBB007091B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAF0810328FB06F8007091B1 /* WSTodayWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTodayWaterView.swift; sourceTree = "<group>"; };
-		FAF0810628FC2BCC007091B1 /* WSFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSFront.swift; sourceTree = "<group>"; };
+		FAF0810628FC2BCC007091B1 /* WSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSFont.swift; sourceTree = "<group>"; };
 		FAF0810C28FC2D8F007091B1 /* WSServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServicesFactory.swift; sourceTree = "<group>"; };
 		FAF0810E28FC2DE1007091B1 /* WSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSService.swift; sourceTree = "<group>"; };
 		FAF0811028FC2F00007091B1 /* WSRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRepository.swift; sourceTree = "<group>"; };
@@ -122,6 +136,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		FAD642262902CEAC009E8F98 /* NewPlant */ = {
+			isa = PBXGroup;
+			children = (
+				FAD642272902CED6009E8F98 /* WSNewPlantViewModel.swift */,
+				FAD642292902CEE6009E8F98 /* WSNewPlantView.swift */,
+			);
+			path = NewPlant;
+			sourceTree = "<group>";
+		};
 		FAF080E528FAFEB7007091B1 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +187,7 @@
 		FAF080FF28FAFF4A007091B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAD642262902CEAC009E8F98 /* NewPlant */,
 				FA9D17A7290184F8006BB413 /* WSTabView.swift */,
 				FA9D179A290181C1006BB413 /* Home */,
 				FA9D179D290183F9006BB413 /* AllPlants */,
@@ -182,6 +206,11 @@
 				FAF0812E290179F4007091B1 /* Ext */,
 				FAF0812C290170ED007091B1 /* WSButtons.swift */,
 				FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */,
+				FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */,
+				FA4335D42909C25E000278A1 /* WSTextField.swift */,
+				FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */,
+				FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */,
+				FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -197,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF080F528FAFEBB007091B1 /* Assets.xcassets */,
-				FAF0810628FC2BCC007091B1 /* WSFront.swift */,
+				FAF0810628FC2BCC007091B1 /* WSFont.swift */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -314,8 +343,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */,
 				FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */,
 				FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */,
+				FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */,
 				FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */,
 				FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */,
 				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
@@ -323,6 +354,7 @@
 				FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */,
 				FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */,
 				FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */,
+				FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */,
 				FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */,
 				FAF0812B29016E50007091B1 /* WSPlantVM.swift in Sources */,
 				FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */,
@@ -331,10 +363,14 @@
 				FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */,
 				FAF0811328FC2F1E007091B1 /* WSReposlitoryLocal.swift in Sources */,
 				FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */,
-				FAF0810728FC2BCC007091B1 /* WSFront.swift in Sources */,
+				FAF0810728FC2BCC007091B1 /* WSFont.swift in Sources */,
+				FA5DE2A82909EF350069CFA5 /* WSWateringRegimeView.swift in Sources */,
+				FAD6422A2902CEE6009E8F98 /* WSNewPlantView.swift in Sources */,
 				FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */,
+				FA5DE2A62909E9CA0069CFA5 /* WSLeafView.swift in Sources */,
 				FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */,
 				FAF0812D290170ED007091B1 /* WSButtons.swift in Sources */,
+				FAD642282902CED6009E8F98 /* WSNewPlantViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,9 +502,11 @@
 				DEVELOPMENT_TEAM = 955DP87LHM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "we need camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -496,9 +534,11 @@
 				DEVELOPMENT_TEAM = 955DP87LHM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "we need camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

@@ -20,18 +20,18 @@ struct WSPlantCellView: View {
             VStack( alignment: .leading ) {
                 Text(viewModel.name)
                     .foregroundColor(.white)
-                    .font(.custom(WSFront.medium, size: 20))
+                    .font(.custom(WSFont.medium, size: 20))
                 Text(viewModel.comment)
                     .foregroundColor(.white)
-                    .font(.custom(WSFront.medium, size: 10))
+                    .font(.custom(WSFont.medium, size: 10))
                 Spacer()
                 HStack {
                     Text("Полить: ")
                         .foregroundColor(.white)
-                        .font(.custom(WSFront.medium, size: 14))
+                        .font(.custom(WSFont.medium, size: 14))
                     Text("день")
                         .foregroundColor(.white)
-                        .font(.custom(WSFront.medium, size: 14))
+                        .font(.custom(WSFont.medium, size: 14))
                 }
             }
             .padding([.top, .bottom], 12)

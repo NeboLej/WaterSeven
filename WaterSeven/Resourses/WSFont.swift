@@ -7,10 +7,13 @@
 
 import Foundation
 
-class WSFront {
+class WSFont {
     
     static let medium = "AvenirNext-Medium"
     static let light = "AvenirNext-Light"
     static let regular = "AvenirNext-Regular"
+    static let bold = "AvenirNext-Bold"
+    static let italic = "AvenirNext-Italic"
+    static let ultralightItalic = "SFProText-UltralightItalic"
     
 }
