@@ -11,11 +11,11 @@ import PhotosUI
 struct WSNewPlantView: View {
     
     private let viewModel = WSNewPlantViewModel()
-    @State private var selectedImage: UIImage?
-    @State private var sourceType: UIImagePickerController.SourceType!
-    @State private var isConformShow = false
+    //    @State private var selectedImage: UIImage?
+    //    @State private var sourceType: UIImagePickerController.SourceType!
+    //    @State private var isConformShow = false
     @State private var isAllertShow = false
-    @State private var isImagePickerShow = false
+    //    @State private var isImagePickerShow = false
     @State private var name = ""
     @State private var comment = ""
     @Environment(\.dismiss) private var dismiss
@@ -23,59 +23,10 @@ struct WSNewPlantView: View {
     var body: some View {
         
         VStack(spacing: 0) {
-            HStack(spacing: 0) {
-                Button {
-                    isAllertShow = true
-                } label: {
-                    Text("Отмена")
-                        .foregroundColor(Color("background3"))
-                }
-                Spacer()
-                
-                Text("Новое растение")
-                    .foregroundColor(Color("background3"))
-                Spacer()
-                Button {
-                    dismiss()
-                } label: {
-                    Text("Сохранить")
-                        .foregroundColor(Color("background3"))
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 15)
-            .padding(.horizontal, 5)
-            .background(Color("backgroundFirst"))
-            
+            header
             ScrollView {
                 VStack(spacing: 0) {
-                    
-                    
-                    if selectedImage != nil {
-                        Image(uiImage: selectedImage!)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                            .frame(width: 300, height: 300)
-                    } else {
-                        VStack {
-                            Image(systemName: "photo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(maxWidth: 150)
-                                .foregroundColor(Color("info"))
-                                .padding(.top, 50)
-                            Text("+ Добавить изображение")
-                                .foregroundColor(Color("info"))
-                                .font(.custom(WSFont.light, size: 16))
-                                .padding(.vertical, 30)
-                        }.frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .onTapGesture {
-                                isConformShow = true
-                            }
-                    }
-                    
+                    WSImageView()
                     ZStack {
                         WSLeafView(direction: .right)
                         VStack(spacing: 20) {
@@ -101,37 +52,9 @@ struct WSNewPlantView: View {
                         dismiss()
                     }, label: Text("Сохранить").font(.custom(WSFont.regular, size: 18)), textColor: Color("background3"), buttonColor: Color("backgroundFirst"))
                     .padding()
-                   
-
                 }
                 .interactiveDismissDisabled()
-                .confirmationDialog("Что использовать?", isPresented: $isConformShow, titleVisibility: .visible) {
-                    Button() {
-                        sourceType = .camera
-                        isImagePickerShow.toggle()
-                    } label: {
-                        Text("Камера")
-                    }
-                    Button() {
-                        sourceType = .photoLibrary
-                        isImagePickerShow.toggle()
-                    } label: {
-                        Text("Галерея")
-                    }
-                    Button() {
-                        
-                    } label: {
-                        Text("Готовое изображеине")
-                    }
-                    
-                    Button(role: .cancel) {
-                        
-                    } label: {
-                        Text("отмена")
-                    }
-                }
-                .sheet(isPresented: $isImagePickerShow) {
-                    WSImagePickerView(selectedImage: $selectedImage, sourceType: sourceType) }
+                
                 .alert("Изменения не сохранятся", isPresented: $isAllertShow) {
                     Button(role: .cancel) {
                         
@@ -147,6 +70,33 @@ struct WSNewPlantView: View {
                 }
             }
         }.background(Color("background"))
+    }
+    
+    @ViewBuilder
+    var header: some View {
+        HStack(spacing: 0) {
+            Button {
+                isAllertShow = true
+            } label: {
+                Text("Отмена")
+                    .foregroundColor(Color("background3"))
+            }
+            Spacer()
+            
+            Text("Новое растение")
+                .foregroundColor(Color("background3"))
+            Spacer()
+            Button {
+                dismiss()
+            } label: {
+                Text("Сохранить")
+                    .foregroundColor(Color("background3"))
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 15)
+        .padding(.horizontal, 5)
+        .background(Color("backgroundFirst"))
     }
 }
 

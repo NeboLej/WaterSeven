@@ -18,6 +18,8 @@
 		FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A529018498006BB413 /* WSSettingsView.swift */; };
 		FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A7290184F8006BB413 /* WSTabView.swift */; };
 		FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */; };
+		FAD0715C290D9B4900EC71E7 /* WSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0715B290D9B4900EC71E7 /* WSCalendarView.swift */; };
+		FAD0715E290DB6AE00EC71E7 /* Date +.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0715D290DB6AE00EC71E7 /* Date +.swift */; };
 		FAD642282902CED6009E8F98 /* WSNewPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD642272902CED6009E8F98 /* WSNewPlantViewModel.swift */; };
 		FAD6422A2902CEE6009E8F98 /* WSNewPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD642292902CEE6009E8F98 /* WSNewPlantView.swift */; };
 		FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF080F128FAFEB7007091B1 /* WaterSevenApp.swift */; };
@@ -37,6 +39,9 @@
 		FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF081262900997B007091B1 /* WSPlantCellView.swift */; };
 		FAF0812B29016E50007091B1 /* WSPlantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0812A29016E50007091B1 /* WSPlantVM.swift */; };
 		FAF0812D290170ED007091B1 /* WSButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0812C290170ED007091B1 /* WSButtons.swift */; };
+		FAF63767290D433400F49694 /* WSPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF63766290D433400F49694 /* WSPlantViewModel.swift */; };
+		FAF63769290D434500F49694 /* WSPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF63768290D434500F49694 /* WSPlantView.swift */; };
+		FAF6376B290D453300F49694 /* WSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6376A290D453300F49694 /* WSImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,8 @@
 		FA9D17A529018498006BB413 /* WSSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSettingsView.swift; sourceTree = "<group>"; };
 		FA9D17A7290184F8006BB413 /* WSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTabView.swift; sourceTree = "<group>"; };
 		FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImagePickerView.swift; sourceTree = "<group>"; };
+		FAD0715B290D9B4900EC71E7 /* WSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarView.swift; sourceTree = "<group>"; };
+		FAD0715D290DB6AE00EC71E7 /* Date +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date +.swift"; sourceTree = "<group>"; };
 		FAD642272902CED6009E8F98 /* WSNewPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSNewPlantViewModel.swift; sourceTree = "<group>"; };
 		FAD642292902CEE6009E8F98 /* WSNewPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSNewPlantView.swift; sourceTree = "<group>"; };
 		FAF080EE28FAFEB7007091B1 /* WaterSeven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterSeven.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +78,9 @@
 		FAF081262900997B007091B1 /* WSPlantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantCellView.swift; sourceTree = "<group>"; };
 		FAF0812A29016E50007091B1 /* WSPlantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantVM.swift; sourceTree = "<group>"; };
 		FAF0812C290170ED007091B1 /* WSButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSButtons.swift; sourceTree = "<group>"; };
+		FAF63766290D433400F49694 /* WSPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantViewModel.swift; sourceTree = "<group>"; };
+		FAF63768290D434500F49694 /* WSPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantView.swift; sourceTree = "<group>"; };
+		FAF6376A290D453300F49694 /* WSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +197,7 @@
 		FAF080FF28FAFF4A007091B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAF63765290D431D00F49694 /* Plant */,
 				FAD642262902CEAC009E8F98 /* NewPlant */,
 				FA9D17A7290184F8006BB413 /* WSTabView.swift */,
 				FA9D179A290181C1006BB413 /* Home */,
@@ -211,6 +222,8 @@
 				FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */,
 				FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */,
 				FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */,
+				FAF6376A290D453300F49694 /* WSImageView.swift */,
+				FAD0715B290D9B4900EC71E7 /* WSCalendarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,8 +282,18 @@
 		FAF0812E290179F4007091B1 /* Ext */ = {
 			isa = PBXGroup;
 			children = (
+				FAD0715D290DB6AE00EC71E7 /* Date +.swift */,
 			);
 			path = Ext;
+			sourceTree = "<group>";
+		};
+		FAF63765290D431D00F49694 /* Plant */ = {
+			isa = PBXGroup;
+			children = (
+				FAF63766290D433400F49694 /* WSPlantViewModel.swift */,
+				FAF63768290D434500F49694 /* WSPlantView.swift */,
+			);
+			path = Plant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +370,8 @@
 				FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */,
 				FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */,
 				FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */,
+				FAD0715E290DB6AE00EC71E7 /* Date +.swift in Sources */,
+				FAF63769290D434500F49694 /* WSPlantView.swift in Sources */,
 				FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */,
 				FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */,
 				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
@@ -357,7 +382,9 @@
 				FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */,
 				FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */,
 				FAF0812B29016E50007091B1 /* WSPlantVM.swift in Sources */,
+				FAD0715C290D9B4900EC71E7 /* WSCalendarView.swift in Sources */,
 				FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */,
+				FAF6376B290D453300F49694 /* WSImageView.swift in Sources */,
 				FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */,
 				FA9D17A129018449006BB413 /* WSAllPlantsView.swift in Sources */,
 				FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */,
@@ -371,6 +398,7 @@
 				FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */,
 				FAF0812D290170ED007091B1 /* WSButtons.swift in Sources */,
 				FAD642282902CED6009E8F98 /* WSNewPlantViewModel.swift in Sources */,
+				FAF63767290D433400F49694 /* WSPlantViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct WSSettingsView: View {
+    
+    @State var date = Date()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        WSCalendarView(currentDate: $date)
     }
+}
+
+func color(fraction: Double) -> Color {
+    Color(red: fraction, green: 1 + fraction, blue: 0.5)
 }
 
 struct WSSettingsView_Previews: PreviewProvider {

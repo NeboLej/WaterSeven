@@ -89,7 +89,9 @@ struct WSWateringRegimeView: View {
                 HStack {
                     if weeks < 4 {
                         Button {
-                            weeks += 1
+                            withAnimation(.easeInOut) {
+                                weeks += 1
+                            }
                         } label: {
                             Image(systemName: "plus")
                             Text("Добавить неделю")
@@ -99,7 +101,9 @@ struct WSWateringRegimeView: View {
   
                     if weeks > 1 {
                         Button {
-                            weeks -= 1
+                            withAnimation(.easeInOut) {
+                                weeks -= 1
+                            }
                         } label: {
                             Image(systemName: "minus")
                             Text("Убрать неделю")
