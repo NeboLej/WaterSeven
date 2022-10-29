@@ -11,6 +11,7 @@ struct WSCalendarView: View {
     
     @Binding var currentDate: Date
     @State private var currentMonth = 0
+    @State private var selectedDate = Date()
     
     private let days = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
     private let columns = Array(repeating: GridItem(.flexible()), count: 7)
@@ -64,20 +65,34 @@ struct WSCalendarView: View {
                         dateCell(value: value)
                             .background (
                                 Capsule()
-                                    .fill(Color.blue)
+                                    .fill(fillCell(date: value.date))
                                     .padding(.horizontal, 8)
-                                    .opacity(isSameDate(date1: value.date, date2: currentDate) ? 1 : 0)
+//                                    .opacity(isSameDay(date1: value.date, date2: currentDate) ? 1 : 0)
                             )
                             .onTapGesture {
-                                currentDate = value.date
+//                                currentDate = value.date
+                                selectedDate = value.date
                             }
                     }
                 }
             }
             .onChange(of: currentMonth) { newValue in
-                currentDate = getCurrentMonth()
+//                currentDate = getCurrentMonth()
             }
         }
+    }
+    private func fillCell(date: Date) -> Color {
+        var color = Color.clear
+        
+        if isSameDay(date1: date, date2: selectedDate) {
+            color = .green
+        }
+        if isSameDay(date1: date, date2: currentDate) {
+            color = .red
+        }
+        
+        print("ffff \(currentDate)")
+        return color
     }
     
     @ViewBuilder
@@ -86,11 +101,11 @@ struct WSCalendarView: View {
             if value.day != -1 {
                 
                 if let day = daysTest.first(where: { date in
-                    return isSameDate(date1: date, date2: value.date)
+                    return isSameDay(date1: date, date2: value.date)
                 }) {
                     Text("\(value.day)")
                         .font(.title3.bold())
-                        .foregroundColor(isSameDate(date1: value.date, date2: currentDate) ? .white : .primary)
+                        .foregroundColor(isSameDay(date1: value.date, date2: currentDate) ? .white : .primary)
                         .frame(maxWidth: .infinity)
                     Spacer()
                     Circle()
@@ -99,7 +114,7 @@ struct WSCalendarView: View {
                 } else {
                     Text("\(value.day)")
                         .font(.title3.bold())
-                        .foregroundColor(isSameDate(date1: value.date, date2: currentDate) ? .white : .primary)
+                        .foregroundColor(isSameDay(date1: value.date, date2: currentDate) ? .white : .primary)
                         .frame(maxWidth: .infinity)
                     Spacer()
                 }
@@ -109,7 +124,7 @@ struct WSCalendarView: View {
         .frame(height: 60, alignment: .top)
     }
     
-    func isSameDate(date1: Date, date2: Date) -> Bool {
+    func isSameDay(date1: Date, date2: Date) -> Bool {
         let calendar = Calendar.current
         return calendar.isDate(date1, inSameDayAs: date2)
     }
@@ -117,7 +132,7 @@ struct WSCalendarView: View {
     func getCurrentMonth() -> Date {
         let calendar = Calendar.current
         
-        guard let currentMonth = calendar.date(byAdding: .month, value: currentMonth, to: Date()) else { return Date() }
+        guard let currentMonth = calendar.date(byAdding: .month, value: self.currentMonth, to: Date()) else { return Date() }
         return currentMonth
     }
     
