@@ -91,7 +91,6 @@ struct WSCalendarView: View {
             color = .red
         }
         
-        print("ffff \(currentDate)")
         return color
     }
     
@@ -100,9 +99,7 @@ struct WSCalendarView: View {
         VStack {
             if value.day != -1 {
                 
-                if let day = daysTest.first(where: { date in
-                    return isSameDay(date1: date, date2: value.date)
-                }) {
+                if daysTest.first(where: { isSameDay(date1: $0, date2: value.date) }) != nil {
                     Text("\(value.day)")
                         .font(.title3.bold())
                         .foregroundColor(isSameDay(date1: value.date, date2: currentDate) ? .white : .primary)
@@ -111,6 +108,7 @@ struct WSCalendarView: View {
                     Circle()
                         .fill(Color.red)
                         .frame(width: 8, height: 8)
+                        
                 } else {
                     Text("\(value.day)")
                         .font(.title3.bold())
@@ -138,7 +136,7 @@ struct WSCalendarView: View {
     
     func extraDate() -> [String] {
         let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY MMMM"
+        formatter.dateFormat = "YYYY LLLL"
         let date = formatter.string(from: getCurrentMonth())
         return date.components(separatedBy: " ")
     }
