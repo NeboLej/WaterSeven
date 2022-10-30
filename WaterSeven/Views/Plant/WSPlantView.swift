@@ -26,54 +26,48 @@ struct WSPlantView: View {
     var body: some View {
         VStack(spacing: 0) {
             header
-            VStack(alignment: .leading, spacing: 0) {
-                WSImageView(selectedImage: $viewModel.image, isEdit: $isEditing)
-                    .readSize { size in
-                        imageSize = size
+            WSImageView(selectedImage: $viewModel.image, isEdit: $isEditing)
+                .readSize { size in imageSize = size }
+                .padding(.bottom, -(imageSize.height/1.6))
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .leading, spacing: 0) {
+                    if isEditing {
+                        WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
+                        WSTextField(placeholder: "комментарий", text: $comment)
+                        
+                        WSWateringRegimeView().padding()
+                        
+                    } else {
+                        Text(viewModel.comment).foregroundColor(Color("background3"))
+                            .font(.custom(WSFont.light, size: 16))
+                            .padding(.top, 15)
+                        Rectangle().foregroundColor(Color("background3"))
+                            .frame(height: 2)
+                            .padding(.top, 8)
+                        
+                        Text("Следующий полив: 23.23.11").foregroundColor(Color("background3"))
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .padding(.vertical, 15)
+                        
+                        WSCalendarView(vm: viewModel.calendarVM)
+                            .background {
+                                Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .scaleEffect(1.2)
+                                    .blur(radius: 30)
+                                    .colorMultiply(Color("backgroundFirst").opacity(0.5))
+                            }
                     }
-                    .padding(.bottom, -(imageSize.height/1.6))
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        if isEditing {
-                            WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
-                            WSTextField(placeholder: "комментарий", text: $comment)
-                            
-                            WSWateringRegimeView().padding()
-                            
-                        } else {
-                            Text(viewModel.comment).foregroundColor(Color("background3"))
-                                .font(.custom(WSFont.light, size: 16))
-                                .padding(.top, 15)
-                            Rectangle().foregroundColor(Color("background3"))
-                                .frame(height: 2)
-                                .padding(.top, 8)
-                            
-                            Text("Следующий полив: 23.23.11").foregroundColor(Color("background3"))
-//                                .font(.custom(WSFont.bold, size: 20))
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .padding(.vertical, 15)
-                            
-                            WSCalendarView(vm: viewModel.calendarVM)
-                                .background {
-                                    Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .scaleEffect(1.2)
-                                        .blur(radius: 30)
-                                        .colorMultiply(Color("backgroundFirst").opacity(0.5))
-                                }
-                        }
-                    }
-//                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .frame(maxHeight: .infinity)
-                    .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
-                    .padding(.top, imageSize.height/2)
                 }
+                .padding()
+                .frame(maxHeight: .infinity)
+                .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
+                .padding(.top, imageSize.height/2)
             }
         }
-        
     }
     
     func color(fraction: Double) -> Color {

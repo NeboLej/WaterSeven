@@ -10,9 +10,18 @@ import SwiftUI
 struct WSSettingsView: View {
     
     @State var date = Date()
+    @State var image = UIImage(named: "plant1")
+    @State var isEdit = false
     
     var body: some View {
-        Text("")
+        VStack {
+            Text("")
+            WSImageView(selectedImage: $image, isEdit: $isEdit)
+            Button("asdasd") {
+                isEdit.toggle()
+            }
+        }
+        
 //        WSCalendarView(currentDate: $date)
     }
 }

@@ -46,7 +46,7 @@ struct WSCalendarView: View {
                             .foregroundColor(Color("calendarText"))
                             .font(.title2)
                     }
-
+                    
                 }
                 .padding(.horizontal)
                 
