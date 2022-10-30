@@ -14,6 +14,7 @@ struct WSPlantView: View {
     
     @State var comment = ""
     @State var name = ""
+    @State private var imageSize = CGSize()
     
     @ObservedObject var viewModel = WSPlantViewModel(service: "service")
     
@@ -25,13 +26,14 @@ struct WSPlantView: View {
     var body: some View {
         VStack(spacing: 0) {
             header
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                
-                VStack(spacing: 0) {
-                    WSImageView(selectedImage: $viewModel.image, isEdit: $isEditing)
-                        .padding(.bottom, -40)
-                    VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
+                WSImageView(selectedImage: $viewModel.image, isEdit: $isEditing)
+                    .readSize { size in
+                        imageSize = size
+                    }
+                    .padding(.bottom, -(imageSize.height/1.6))
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 0) {
                         if isEditing {
                             WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
                             WSTextField(placeholder: "комментарий", text: $comment)
@@ -41,32 +43,37 @@ struct WSPlantView: View {
                         } else {
                             Text(viewModel.comment).foregroundColor(Color("background3"))
                                 .font(.custom(WSFont.light, size: 16))
-                                .frame(alignment: .leading)
+                                .padding(.top, 15)
                             Rectangle().foregroundColor(Color("background3"))
                                 .frame(height: 2)
                                 .padding(.top, 8)
-                            Spacer(minLength: 30)
                             
-                            HStack {
-                                WSCalendarView(vm: viewModel.calendarVM)
-                                    .background {
-                                        Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .scaleEffect(1.2)
-                                            .blur(radius: 30)
-                                        //                                            .clipped()
-                                            .colorMultiply(Color("backgroundFirst").opacity(0.5))
-                                    }
-                            }
+                            Text("Следующий полив: 23.23.11").foregroundColor(Color("background3"))
+//                                .font(.custom(WSFont.bold, size: 20))
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .padding(.vertical, 15)
+                            
+                            WSCalendarView(vm: viewModel.calendarVM)
+                                .background {
+                                    Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .scaleEffect(1.2)
+                                        .blur(radius: 30)
+                                        .colorMultiply(Color("backgroundFirst").opacity(0.5))
+                                }
                         }
                     }
-                    .frame(maxWidth: .infinity)
+//                    .frame(maxWidth: .infinity)
                     .padding()
+                    .frame(maxHeight: .infinity)
                     .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
+                    .padding(.top, imageSize.height/2)
                 }
             }
         }
+        
     }
     
     func color(fraction: Double) -> Color {

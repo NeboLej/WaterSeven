@@ -18,6 +18,7 @@
 		FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A529018498006BB413 /* WSSettingsView.swift */; };
 		FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D17A7290184F8006BB413 /* WSTabView.swift */; };
 		FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */; };
+		FAB81C09290EFFA7008FD888 /* View +.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB81C08290EFFA7008FD888 /* View +.swift */; };
 		FAD0715C290D9B4900EC71E7 /* WSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0715B290D9B4900EC71E7 /* WSCalendarView.swift */; };
 		FAD0715E290DB6AE00EC71E7 /* Date +.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD0715D290DB6AE00EC71E7 /* Date +.swift */; };
 		FAD07161290E040D00EC71E7 /* WSCalendarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD07160290E040D00EC71E7 /* WSCalendarVM.swift */; };
@@ -57,6 +58,7 @@
 		FA9D17A529018498006BB413 /* WSSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSSettingsView.swift; sourceTree = "<group>"; };
 		FA9D17A7290184F8006BB413 /* WSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTabView.swift; sourceTree = "<group>"; };
 		FA9F35F12902EAF3007B1194 /* WSImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImagePickerView.swift; sourceTree = "<group>"; };
+		FAB81C08290EFFA7008FD888 /* View +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View +.swift"; sourceTree = "<group>"; };
 		FAD0715B290D9B4900EC71E7 /* WSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarView.swift; sourceTree = "<group>"; };
 		FAD0715D290DB6AE00EC71E7 /* Date +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date +.swift"; sourceTree = "<group>"; };
 		FAD07160290E040D00EC71E7 /* WSCalendarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarVM.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD0715D290DB6AE00EC71E7 /* Date +.swift */,
+				FAB81C08290EFFA7008FD888 /* View +.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */,
 				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
 				FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */,
+				FAB81C09290EFFA7008FD888 /* View +.swift in Sources */,
 				FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */,
 				FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */,
 				FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */,

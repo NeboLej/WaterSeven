@@ -19,32 +19,27 @@ struct WSImageView: View {
         
         VStack {
             if selectedImage != nil {
-                ZStack {
+                ZStack(alignment: .top) {
                     Image(uiImage: selectedImage!)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                    //                            .clipShape(Circle())
-                    //                            .frame(width: 300, height: 300)
                         .frame(maxWidth: .infinity)
-                        .onTapGesture {
-                            isConformShow = true
-                        }
                     
                     if isEdit {
                         VStack() {
-    //                        Spacer()
                             Image(systemName: "photo")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: 150)
                                 .foregroundColor(Color("info"))
-                                .padding(.top, 50)
+                                .padding(.top, 10)
                             Text("+ Изменить изображение")
                                 .foregroundColor(Color("info"))
                                 .font(.custom(WSFont.light, size: 18))
-                                .padding(.top, 15)
-                                .padding(.bottom, 60)
+                                .padding(10)
+                                .background(Color("backgroundFirst"))
                         }
+                        .padding()
                         .onTapGesture {
                             isConformShow = true
                         }     
@@ -55,11 +50,11 @@ struct WSImageView: View {
                 VStack {
                     Image(systemName: "photo")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 150)
                         .foregroundColor(Color("info"))
                         .padding(.top, 50)
-                    Text("+ Добавить изображение")
+                    Text("+ Нет изображения")
                         .foregroundColor(Color("info"))
                         .font(.custom(WSFont.light, size: 16))
                         .padding(.top, 15)
@@ -104,6 +99,6 @@ struct WSImageView: View {
 
 struct WSImageView_Previews: PreviewProvider {
     static var previews: some View {
-        WSImageView(selectedImage: .init(get: { UIImage(named: "plant1") }, set: { _ in }), isEdit: .init(get: { false }, set: { _ in }))
+        WSImageView(selectedImage: .init(get: { UIImage(named: "plant1") }, set: { _ in }), isEdit: .init(get: { true }, set: { _ in }))
     }
 }

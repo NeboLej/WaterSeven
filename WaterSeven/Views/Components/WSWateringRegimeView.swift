@@ -43,7 +43,7 @@ struct WSWateringRegimeView: View {
             .padding(.top, 10)
             
             if isPeriod {
-                VStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
                     HStack(spacing: 10) {
                         Spacer()
                         Text("1 раз в")
@@ -63,7 +63,7 @@ struct WSWateringRegimeView: View {
                     
                 }
             } else {
-                VStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
                     let calendar = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
                     LazyHGrid(rows: [row], alignment: .center, spacing: 25) {
                         ForEach(0..<7) { index in
