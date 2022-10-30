@@ -17,4 +17,10 @@ extension Date {
         
         return range.compactMap { calendar.date(byAdding: .day, value: $0 - 1, to: startDate)! }
     }
+    
+    func isSameDay(date: Date) -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(date, inSameDayAs: self)
+    }
+    
 }

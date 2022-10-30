@@ -9,22 +9,48 @@ import SwiftUI
 
 struct WSImageView: View {
     
-    @State private var selectedImage: UIImage?
+    @Binding var selectedImage: UIImage?
     @State private var sourceType: UIImagePickerController.SourceType!
     @State private var isConformShow = false
     @State private var isImagePickerShow = false
-    
+    @Binding var isEdit: Bool
     
     var body: some View {
         
         VStack {
             if selectedImage != nil {
-                Image(uiImage: selectedImage!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                //                            .clipShape(Circle())
-                //                            .frame(width: 300, height: 300)
-                    .frame(maxWidth: .infinity)
+                ZStack {
+                    Image(uiImage: selectedImage!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    //                            .clipShape(Circle())
+                    //                            .frame(width: 300, height: 300)
+                        .frame(maxWidth: .infinity)
+                        .onTapGesture {
+                            isConformShow = true
+                        }
+                    
+                    if isEdit {
+                        VStack() {
+    //                        Spacer()
+                            Image(systemName: "photo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 150)
+                                .foregroundColor(Color("info"))
+                                .padding(.top, 50)
+                            Text("+ Изменить изображение")
+                                .foregroundColor(Color("info"))
+                                .font(.custom(WSFont.light, size: 18))
+                                .padding(.top, 15)
+                                .padding(.bottom, 60)
+                        }
+                        .onTapGesture {
+                            isConformShow = true
+                        }     
+                    }
+                }
+                
             } else {
                 VStack {
                     Image(systemName: "photo")
@@ -36,7 +62,8 @@ struct WSImageView: View {
                     Text("+ Добавить изображение")
                         .foregroundColor(Color("info"))
                         .font(.custom(WSFont.light, size: 16))
-                        .padding(.vertical, 30)
+                        .padding(.top, 15)
+                        .padding(.bottom, 60)
                 }.frame(maxWidth: .infinity)
                     .background(Color.white)
                     .onTapGesture {
@@ -77,6 +104,6 @@ struct WSImageView: View {
 
 struct WSImageView_Previews: PreviewProvider {
     static var previews: some View {
-        WSImageView()
+        WSImageView(selectedImage: .init(get: { UIImage(named: "plant1") }, set: { _ in }), isEdit: .init(get: { false }, set: { _ in }))
     }
 }

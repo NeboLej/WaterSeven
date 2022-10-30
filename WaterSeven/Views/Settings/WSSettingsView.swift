@@ -12,7 +12,8 @@ struct WSSettingsView: View {
     @State var date = Date()
     
     var body: some View {
-        WSCalendarView(currentDate: $date)
+        Text("")
+//        WSCalendarView(currentDate: $date)
     }
 }
 

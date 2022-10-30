@@ -26,7 +26,7 @@ struct WSNewPlantView: View {
             header
             ScrollView {
                 VStack(spacing: 0) {
-                    WSImageView()
+//                    WSImageView()
                     ZStack {
                         WSLeafView(direction: .right)
                         VStack(spacing: 20) {

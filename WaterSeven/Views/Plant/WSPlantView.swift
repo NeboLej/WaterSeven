@@ -14,12 +14,8 @@ struct WSPlantView: View {
     
     @State var comment = ""
     @State var name = ""
-    @State private var position = 0
-    @State private var date = Date()
     
-    @State var sizeImage = CGSize(width: 0, height: 0)
-    
-    let viewModel = WSPlantViewModel(service: "service")
+    @ObservedObject var viewModel = WSPlantViewModel(service: "service")
     
     init() {
         comment = viewModel.comment
@@ -29,11 +25,12 @@ struct WSPlantView: View {
     var body: some View {
         VStack(spacing: 0) {
             header
-
-            ScrollView {
+            
+            ScrollView(.vertical, showsIndicators: false) {
                 
                 VStack(spacing: 0) {
-                    WSImageView()
+                    WSImageView(selectedImage: $viewModel.image, isEdit: $isEditing)
+                        .padding(.bottom, -40)
                     VStack(spacing: 0) {
                         if isEditing {
                             WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
@@ -47,17 +44,26 @@ struct WSPlantView: View {
                                 .frame(alignment: .leading)
                             Rectangle().foregroundColor(Color("background3"))
                                 .frame(height: 2)
-                            DatePicker("", selection: $date)
-                                .datePickerStyle(.graphical)
-                                .padding()
-                                .foregroundColor(.red)
-                                
+                                .padding(.top, 8)
+                            Spacer(minLength: 30)
+                            
+                            HStack {
+                                WSCalendarView(vm: viewModel.calendarVM)
+                                    .background {
+                                        Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .scaleEffect(1.2)
+                                            .blur(radius: 30)
+                                        //                                            .clipped()
+                                            .colorMultiply(Color("backgroundFirst").opacity(0.5))
+                                    }
+                            }
                         }
-                        
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 50).fill(Color("backgroundFirst").opacity(0.9)))
+                    .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
                 }
             }
         }
