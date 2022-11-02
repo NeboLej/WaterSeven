@@ -23,7 +23,7 @@ struct WSTabView: View {
                 Image(systemName: "house")
                 Text("главная")
             }.tag(1)
-            WSPlantView()
+            WSNewPlantView()
                 .tabItem {
                 Image(systemName: "gearshape")
                 Text("настройки")

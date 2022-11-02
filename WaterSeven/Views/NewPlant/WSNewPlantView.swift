@@ -6,70 +6,64 @@
 //
 
 import SwiftUI
-import PhotosUI
 
 struct WSNewPlantView: View {
     
-    private let viewModel = WSNewPlantViewModel()
-    //    @State private var selectedImage: UIImage?
-    //    @State private var sourceType: UIImagePickerController.SourceType!
-    //    @State private var isConformShow = false
+    @ObservedObject private var viewModel = WSNewPlantViewModel()
     @State private var isAllertShow = false
-    //    @State private var isImagePickerShow = false
-    @State private var name = ""
-    @State private var comment = ""
+    @State private var imageSize = CGSize()
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        
         VStack(spacing: 0) {
             header
-            ScrollView {
-                VStack(spacing: 0) {
-//                    WSImageView()
-                    ZStack {
-                        WSLeafView(direction: .right)
-                        VStack(spacing: 20) {
-                            WSTextField(placeholder: "Название*", text: $name)
-                                .padding(.top, 20)
-                            WSTextField(placeholder: "Комментарий", text: $comment)
-                                .padding(.bottom, 20)
-                        }
-                        .padding()
-                    }
-                    .padding(.bottom, 20)
+            ZStack(alignment: .top) {
+                WSImageView(selectedImage: $viewModel.image, isEdit: true)
+                    .readSize { size in imageSize = size }
+                VStack(spacing: 0)  {
+//                    Spacer(minLength: imageSize.height/1.6)
                     
-                    ZStack {
-                        WSLeafView(direction: .left)
-                        VStack {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            WSTextField(placeholder: "Название*", text: $viewModel.name)
+                                .padding(.top, 30)
+                            WSTextField(placeholder: "Комментарий", text: $viewModel.comment)
+                                .padding(.top, 20)
                             WSWateringRegimeView()
                                 .padding()
+                            Spacer(minLength: 300)
                         }
-                        .padding()
+                        .background {
+                            Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .scaleEffect(1)
+                                .blur(radius: 40)
+                                .colorMultiply(Color("backgroundFirst").opacity(0.5))
+                        }
+                        .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.9), Color("backgroundFirst").opacity(0)]), startPoint: .top, endPoint: .bottom))
+                        .cornerRadius(30)
                     }
-                    
-                    WSButtonOne(action: {
-                        dismiss()
-                    }, label: Text("Сохранить").font(.custom(WSFont.regular, size: 18)), textColor: Color("background3"), buttonColor: Color("backgroundFirst"))
-                    .padding()
-                }
-                .interactiveDismissDisabled()
-                
-                .alert("Изменения не сохранятся", isPresented: $isAllertShow) {
-                    Button(role: .cancel) {
-                        
-                    } label: {
-                        Text("Отмена")
-                    }
-                    
-                    Button(role: .destructive) {
-                        dismiss()
-                    } label: {
-                        Text("Не сохранять")
-                    }
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0), Color("backgroundFirst").opacity(0.9)]), startPoint: .top, endPoint: .bottom))
+                    .ignoresSafeArea()
+                    .offset(y: imageSize.height/1.6)
                 }
             }
-        }.background(Color("background"))
+        }
+        .interactiveDismissDisabled()
+        .alert("Изменения не сохранятся", isPresented: $isAllertShow) {
+            Button(role: .cancel) {
+                
+            } label: {
+                Text("Отмена")
+            }
+            
+            Button(role: .destructive) {
+                dismiss()
+            } label: {
+                Text("Не сохранять")
+            }
+        }
     }
     
     @ViewBuilder

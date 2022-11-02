@@ -16,7 +16,7 @@ struct WSSettingsView: View {
     var body: some View {
         VStack {
             Text("")
-            WSImageView(selectedImage: $image, isEdit: $isEdit)
+            WSImageView(selectedImage: $image, isEdit: isEdit)
             Button("asdasd") {
                 isEdit.toggle()
             }

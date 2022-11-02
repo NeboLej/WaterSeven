@@ -29,48 +29,44 @@ struct WSPlantView: View {
     var body: some View {
         VStack(spacing: 0) {
             header
-            WSImageView(selectedImage: $viewModel.image, isEdit: $isEditing)
-                .readSize { size in imageSize = size }
-                .padding(.bottom, -(imageSize.height/1.6))
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                if isEditing {
-                    editView
-                } else {
-                    plantView
+            ZStack(alignment: .top) {
+                WSImageView(selectedImage: $viewModel.image, isEdit: isEditing)
+                    .readSize { size in imageSize = size }
+                
+                VStack(spacing: 0){
+                    Spacer(minLength: imageSize.height/1.2)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        if isEditing {
+                            editView
+                        } else {
+                            plantView
+                        }
+                    }
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0), Color("backgroundFirst").opacity(0.9)]), startPoint: .top, endPoint: .bottom))
                 }
-                gradientRectangle
             }
         }
-        .background(
-            LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.4), Color("backgroundFirst").opacity(0.9)]), startPoint: .top, endPoint: .bottom)
-        )
     }
     
     @ViewBuilder
     var editView: some View {
-            VStack {
-                VStack {
-                    WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
-                    WSTextField(placeholder: "комментарий", text: $comment)
-                    
-                    WSWateringRegimeView().padding()
-                }
-                .background {
-                    Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .scaleEffect(1.1)
-                        .blur(radius: 30)
-                        .colorMultiply(Color("backgroundFirst").opacity(0.4))
-                }
-            }
-            .padding()
-            .frame(maxHeight: .infinity)
-            .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
-            .padding(.top, imageSize.height/2)
+        VStack {
+            WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
+            WSTextField(placeholder: "комментарий", text: $comment)
+            
+            WSWateringRegimeView().padding()
         }
-
+        .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.9), Color("backgroundFirst").opacity(0)]), startPoint: .top, endPoint: .bottom))
+        .cornerRadius(30)
+        .background {
+            Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .scaleEffect(1)
+                .blur(radius: 50)
+                .colorMultiply(Color("backgroundFirst").opacity(0.5))
+        }
+    }
     
     @ViewBuilder
     var plantView: some View {
@@ -114,8 +110,8 @@ struct WSPlantView: View {
             WSRegimeView(isEdit: false)
         }
         .padding()
-        .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
-        .padding(.top, imageSize.height/2)
+        .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.9), Color("backgroundFirst").opacity(0)]), startPoint: .top, endPoint: .bottom))
+        .cornerRadius(30)
     }
     
     @ViewBuilder
@@ -148,17 +144,6 @@ struct WSPlantView: View {
         .padding(.vertical, 15)
         .padding(.horizontal, 5)
         .background(Color("backgroundFirst"))
-    }
-    
-    @ViewBuilder
-    var gradientRectangle: some View {
-        Rectangle()
-            .fill(
-                LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.9), Color("backgroundFirst").opacity(0)]), startPoint: .top, endPoint: .bottom)
-            )
-            .frame(maxWidth: .infinity)
-            .frame(height: 80)
-            .padding(.top, -8)
     }
     
     private func editClick() {
