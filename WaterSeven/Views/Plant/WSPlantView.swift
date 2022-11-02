@@ -15,6 +15,8 @@ struct WSPlantView: View {
     @State var comment = ""
     @State var name = ""
     @State private var imageSize = CGSize()
+    private let row = GridItem(.fixed(30))
+    @State var weeks = 2
     
     @ObservedObject var viewModel = WSPlantViewModel(service: "service")
     
@@ -31,47 +33,78 @@ struct WSPlantView: View {
                 .padding(.bottom, -(imageSize.height/1.6))
             
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 0) {
-                    if isEditing {
-                        WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
-                        WSTextField(placeholder: "комментарий", text: $comment)
-                        
-                        WSWateringRegimeView().padding()
-                        
-                    } else {
-                        Text(viewModel.comment).foregroundColor(Color("background3"))
-                            .font(.custom(WSFont.light, size: 16))
-                            .padding(.top, 15)
-                        Rectangle().foregroundColor(Color("background3"))
-                            .frame(height: 2)
-                            .padding(.top, 8)
-                        
-                        Text("Следующий полив: 23.23.11").foregroundColor(Color("background3"))
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding(.vertical, 15)
-                        
-                        WSCalendarView(vm: viewModel.calendarVM)
-                            .background {
-                                Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .scaleEffect(1.2)
-                                    .blur(radius: 30)
-                                    .colorMultiply(Color("backgroundFirst").opacity(0.5))
-                            }
-                    }
+                if isEditing {
+                    editView
+                } else {
+                    plantView
                 }
-                .padding()
-                .frame(maxHeight: .infinity)
-                .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
-                .padding(.top, imageSize.height/2)
             }
         }
     }
     
     func color(fraction: Double) -> Color {
         Color(red: fraction, green: 1 - fraction, blue: 0.5)
+    }
+    
+    @ViewBuilder
+    var editView: some View {
+        VStack {
+            WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
+            WSTextField(placeholder: "комментарий", text: $comment)
+            
+            WSWateringRegimeView().padding()
+        }
+        .padding()
+        .frame(maxHeight: .infinity)
+        .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
+        .padding(.top, imageSize.height/2)
+    }
+    
+    @ViewBuilder
+    var plantView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(viewModel.comment).foregroundColor(Color("background3"))
+                .font(.custom(WSFont.light, size: 16))
+                .padding(.top, 15)
+            Rectangle().foregroundColor(Color("background3"))
+                .frame(height: 2)
+                .padding(.top, 8)
+            
+            Text("Следующий полив: 23.23.11").foregroundColor(Color("background3"))
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding(.vertical, 15)
+            
+            WSCalendarView(vm: viewModel.calendarVM)
+                .background {
+                    Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .scaleEffect(1.5)
+                        .blur(radius: 30)
+                        .colorMultiply(Color("backgroundFirst").opacity(0.5))
+                }
+            
+            HStack(alignment: .bottom, spacing: 10) {
+                Text("График полива:")
+                    .font(.custom(WSFont.regular, size: 16))
+                Text("1 раз в ")
+                    .font(.custom(WSFont.regular, size: 16))
+                Text("\(viewModel.period)")
+                    .font(.custom(WSFont.bold, size: 36))
+                    .offset(y: 9)
+                Text(viewModel.toReadDay(day: viewModel.period))
+                    .font(.custom(WSFont.regular, size: 16))
+            }
+            .foregroundColor(Color("background3"))
+            .padding(.top, 20)
+            
+            regimeCalendar
+        }
+        .padding()
+        .frame(maxHeight: .infinity)
+        .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
+        .padding(.top, imageSize.height/2)
     }
     
     @ViewBuilder
@@ -85,7 +118,7 @@ struct WSPlantView: View {
             }
             Spacer()
             
-            Text("Новое растение")
+            Text(viewModel.name)
                 .foregroundColor(Color("background3"))
             Spacer()
             
@@ -104,6 +137,34 @@ struct WSPlantView: View {
         .padding(.vertical, 15)
         .padding(.horizontal, 5)
         .background(Color("backgroundFirst"))
+    }
+    
+    @ViewBuilder
+    var regimeCalendar: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("График полива:")
+                .font(.custom(WSFont.regular, size: 16))
+                .foregroundColor(Color("background3"))
+            let calendar = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
+            LazyHGrid(rows: [row], alignment: .center, spacing: 25) {
+                ForEach(0..<7) { index in
+                    Text(calendar[index])
+                        .foregroundColor(Color("background3"))
+                }
+            }
+            .padding(.bottom, 1)
+            
+            ForEach(0..<weeks, id: \.self) { line in
+                LazyHGrid(rows: [row], alignment: .center, spacing: 20) {
+                    ForEach(1..<8) { index in
+                        WSCalendarCell(index: index + 7 * line) { index in
+                            print(index)
+                        }
+                    }
+                }
+            }
+            
+        }
     }
     
     private func editClick() {

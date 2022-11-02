@@ -8,6 +8,19 @@
 import SwiftUI
 
 extension View {
+    
+    func addPopOver<Content: View>(show: Binding<Bool>, @ViewBuilder content: @escaping ()->Content ) -> some View {
+        self
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay {
+                ZStack {
+                    if show.wrappedValue {
+                        content()
+                    }
+                }
+        }
+    }
+    
   func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
     background(
       GeometryReader { geometryProxy in
@@ -23,3 +36,5 @@ private struct SizePreferenceKey: PreferenceKey {
   static var defaultValue: CGSize = .zero
   static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
 }
+
+

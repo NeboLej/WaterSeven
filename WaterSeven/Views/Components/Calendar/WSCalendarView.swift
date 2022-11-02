@@ -15,7 +15,7 @@ struct WSCalendarView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 15) {
+            VStack(alignment: .leading, spacing: 15) {
                 HStack(spacing: 20) {
                     VStack(alignment: .leading, spacing: 10) {
                         Text(vm.extraDate()[0])
@@ -48,7 +48,6 @@ struct WSCalendarView: View {
                     }
                     
                 }
-                .padding(.horizontal)
                 
                 HStack(spacing: 0) {
                     ForEach(vm.days, id: \.self) { day in
@@ -64,8 +63,10 @@ struct WSCalendarView: View {
                         dateCell(model: $0)
                     }
                 }
+
             }
         }
+
     }
     
     @ViewBuilder
@@ -109,7 +110,7 @@ struct WSCalendarView: View {
 
 struct WSCalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        WSPlantView()
+        WSCalendarView(vm: WSCalendarVM(wateringDays: [Date()]))
     }
 }
 
