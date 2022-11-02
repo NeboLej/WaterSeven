@@ -43,7 +43,7 @@ struct WSWateringRegimeView: View {
             .padding(.top, 10)
             
             if isPeriod {
-                VStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
                     HStack(spacing: 10) {
                         Spacer()
                         Text("1 раз в")
@@ -63,51 +63,7 @@ struct WSWateringRegimeView: View {
                     
                 }
             } else {
-                VStack(spacing: 0) {
-                    let calendar = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
-                    LazyHGrid(rows: [row], alignment: .center, spacing: 25) {
-                        ForEach(0..<7) { index in
-                            Text(calendar[index])
-                                .foregroundColor(Color("background3"))
-                        }
-                    }
-                    .padding(.bottom, 1)
-                    
-                    ForEach(0..<weeks, id: \.self) { line in
-                        LazyHGrid(rows: [row], alignment: .center, spacing: 20) {
-                            ForEach(1..<8) { index in
-                                WSCalendarCell(index: index + 7 * line) { index in
-                                    print(index)
-                                }
-                            }
-                        }
-                    }
- 
-                }
-                .padding(.top, 15)
-                
-                HStack {
-                    if weeks < 4 {
-                        Button {
-                            weeks += 1
-                        } label: {
-                            Image(systemName: "plus")
-                            Text("Добавить неделю")
-                                .font(.custom(WSFont.light, size: 12))
-                        }.foregroundColor(Color("background3"))
-                    }
-  
-                    if weeks > 1 {
-                        Button {
-                            weeks -= 1
-                        } label: {
-                            Image(systemName: "minus")
-                            Text("Убрать неделю")
-                                .font(.custom(WSFont.light, size: 12))
-                        }.foregroundColor(Color("background3"))
-                    }
-                }
-                .padding(.top, 10)
+                WSRegimeView(isEdit: true)
             }
         }
     }

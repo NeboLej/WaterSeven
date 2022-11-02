@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct WSTextField: View {
-    @State private var isFocus = false
     
+    @State private var isFocus = false
     let placeholder: String
     @Binding var text: String
     
@@ -48,6 +48,10 @@ struct WSTextField: View {
                 .frame(height: 1)
                 .offset(x: 0, y: -8)
                 .padding(.horizontal, isFocus ? 8 : 10)
+        }.onAppear {
+            if !text.isEmpty {
+                isFocus = true
+            }
         }
     }
 }
