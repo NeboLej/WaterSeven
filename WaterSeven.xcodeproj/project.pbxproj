@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */; };
+		FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA304769291264F8004E7292 /* WSRegimeView.swift */; };
 		FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4335D42909C25E000278A1 /* WSTextField.swift */; };
 		FA5DE2A62909E9CA0069CFA5 /* WSLeafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */; };
 		FA5DE2A82909EF350069CFA5 /* WSWateringRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarCell.swift; sourceTree = "<group>"; };
+		FA304769291264F8004E7292 /* WSRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRegimeView.swift; sourceTree = "<group>"; };
 		FA4335D42909C25E000278A1 /* WSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTextField.swift; sourceTree = "<group>"; };
 		FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSLeafView.swift; sourceTree = "<group>"; };
 		FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSWateringRegimeView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				FA4335D42909C25E000278A1 /* WSTextField.swift */,
 				FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */,
 				FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */,
+				FA304769291264F8004E7292 /* WSRegimeView.swift */,
 				FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */,
 				FAF6376A290D453300F49694 /* WSImageView.swift */,
 			);
@@ -409,6 +412,7 @@
 				FAF0810728FC2BCC007091B1 /* WSFont.swift in Sources */,
 				FA5DE2A82909EF350069CFA5 /* WSWateringRegimeView.swift in Sources */,
 				FAD6422A2902CEE6009E8F98 /* WSNewPlantView.swift in Sources */,
+				FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */,
 				FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */,
 				FA5DE2A62909E9CA0069CFA5 /* WSLeafView.swift in Sources */,
 				FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */,

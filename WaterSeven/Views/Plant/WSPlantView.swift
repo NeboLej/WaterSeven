@@ -15,8 +15,9 @@ struct WSPlantView: View {
     @State var comment = ""
     @State var name = ""
     @State private var imageSize = CGSize()
-    private let row = GridItem(.fixed(30))
     @State var weeks = 2
+    
+    private let row = GridItem(.fixed(30))
     
     @ObservedObject var viewModel = WSPlantViewModel(service: "service")
     
@@ -38,27 +39,38 @@ struct WSPlantView: View {
                 } else {
                     plantView
                 }
+                gradientRectangle
             }
         }
-    }
-    
-    func color(fraction: Double) -> Color {
-        Color(red: fraction, green: 1 - fraction, blue: 0.5)
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.4), Color("backgroundFirst").opacity(0.9)]), startPoint: .top, endPoint: .bottom)
+        )
     }
     
     @ViewBuilder
     var editView: some View {
-        VStack {
-            WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
-            WSTextField(placeholder: "комментарий", text: $comment)
-            
-            WSWateringRegimeView().padding()
+            VStack {
+                VStack {
+                    WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
+                    WSTextField(placeholder: "комментарий", text: $comment)
+                    
+                    WSWateringRegimeView().padding()
+                }
+                .background {
+                    Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .scaleEffect(1.1)
+                        .blur(radius: 30)
+                        .colorMultiply(Color("backgroundFirst").opacity(0.4))
+                }
+            }
+            .padding()
+            .frame(maxHeight: .infinity)
+            .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
+            .padding(.top, imageSize.height/2)
         }
-        .padding()
-        .frame(maxHeight: .infinity)
-        .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
-        .padding(.top, imageSize.height/2)
-    }
+
     
     @ViewBuilder
     var plantView: some View {
@@ -70,7 +82,7 @@ struct WSPlantView: View {
                 .frame(height: 2)
                 .padding(.top, 8)
             
-            Text("Следующий полив: 23.23.11").foregroundColor(Color("background3"))
+            Text("Следующий полив: \(viewModel.nextWaterung())").foregroundColor(Color("background3"))
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.vertical, 15)
@@ -99,10 +111,9 @@ struct WSPlantView: View {
             .foregroundColor(Color("background3"))
             .padding(.top, 20)
             
-            regimeCalendar
+            WSRegimeView(isEdit: false)
         }
         .padding()
-        .frame(maxHeight: .infinity)
         .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
         .padding(.top, imageSize.height/2)
     }
@@ -140,31 +151,14 @@ struct WSPlantView: View {
     }
     
     @ViewBuilder
-    var regimeCalendar: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("График полива:")
-                .font(.custom(WSFont.regular, size: 16))
-                .foregroundColor(Color("background3"))
-            let calendar = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
-            LazyHGrid(rows: [row], alignment: .center, spacing: 25) {
-                ForEach(0..<7) { index in
-                    Text(calendar[index])
-                        .foregroundColor(Color("background3"))
-                }
-            }
-            .padding(.bottom, 1)
-            
-            ForEach(0..<weeks, id: \.self) { line in
-                LazyHGrid(rows: [row], alignment: .center, spacing: 20) {
-                    ForEach(1..<8) { index in
-                        WSCalendarCell(index: index + 7 * line) { index in
-                            print(index)
-                        }
-                    }
-                }
-            }
-            
-        }
+    var gradientRectangle: some View {
+        Rectangle()
+            .fill(
+                LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.9), Color("backgroundFirst").opacity(0)]), startPoint: .top, endPoint: .bottom)
+            )
+            .frame(maxWidth: .infinity)
+            .frame(height: 80)
+            .padding(.top, -8)
     }
     
     private func editClick() {

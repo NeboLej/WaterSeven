@@ -33,11 +33,10 @@ struct WSImageView: View {
                                 .frame(maxWidth: 150)
                                 .foregroundColor(Color("info"))
                                 .padding(.top, 10)
-                            Text("+ Изменить изображение")
+                            Text("Изменить изображение")
                                 .foregroundColor(Color("info"))
                                 .font(.custom(WSFont.light, size: 18))
                                 .padding(10)
-                                .background(Color("backgroundFirst"))
                         }
                         .padding()
                         .onTapGesture {

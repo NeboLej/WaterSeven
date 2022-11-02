@@ -40,6 +40,10 @@ class WSPlantViewModel: WSViewModel, ObservableObject {
         if day > 1 && day < 5 { return "дня"}
         return "дней"
     }
+    
+    func nextWaterung() -> String {
+        return "завтра"
+    }
 }
 
 
