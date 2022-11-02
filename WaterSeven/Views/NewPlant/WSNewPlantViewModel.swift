@@ -5,8 +5,12 @@
 //  Created by Nebo on 21.10.2022.
 //
 
-import Foundation
+import UIKit
 
-class WSNewPlantViewModel: WSViewModel {
+class WSNewPlantViewModel: WSViewModel, ObservableObject {
+    
+    @Published var image: UIImage?
+    @Published var name = ""
+    @Published var comment = ""
     
 }

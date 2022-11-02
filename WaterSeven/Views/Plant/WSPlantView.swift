@@ -29,7 +29,7 @@ struct WSPlantView: View {
     var body: some View {
         VStack(spacing: 0) {
             header
-            WSImageView(selectedImage: $viewModel.image, isEdit: $isEditing)
+            WSImageView(selectedImage: $viewModel.image, isEdit: isEditing)
                 .readSize { size in imageSize = size }
                 .padding(.bottom, -(imageSize.height/1.6))
             
@@ -49,28 +49,28 @@ struct WSPlantView: View {
     
     @ViewBuilder
     var editView: some View {
+        VStack {
             VStack {
-                VStack {
-                    WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
-                    WSTextField(placeholder: "комментарий", text: $comment)
-                    
-                    WSWateringRegimeView().padding()
-                }
-                .background {
-                    Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .scaleEffect(1.1)
-                        .blur(radius: 30)
-                        .colorMultiply(Color("backgroundFirst").opacity(0.4))
-                }
+                WSTextField(placeholder: "Название", text: $name).padding(.top, 15)
+                WSTextField(placeholder: "комментарий", text: $comment)
+                
+                WSWateringRegimeView().padding()
             }
-            .padding()
-            .frame(maxHeight: .infinity)
-            .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
-            .padding(.top, imageSize.height/2)
+            .background {
+                Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .scaleEffect(1.1)
+                    .blur(radius: 30)
+                    .colorMultiply(Color("backgroundFirst").opacity(0.4))
+            }
         }
-
+        .padding()
+        .frame(maxHeight: .infinity)
+        .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
+        .padding(.top, imageSize.height/2)
+    }
+    
     
     @ViewBuilder
     var plantView: some View {

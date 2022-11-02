@@ -13,7 +13,7 @@ struct WSImageView: View {
     @State private var sourceType: UIImagePickerController.SourceType!
     @State private var isConformShow = false
     @State private var isImagePickerShow = false
-    @Binding var isEdit: Bool
+    var isEdit: Bool
     
     var body: some View {
         
@@ -30,11 +30,11 @@ struct WSImageView: View {
                             Image(systemName: "photo")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 150)
-                                .foregroundColor(Color("info"))
+                                .frame(maxWidth: 100)
+                                .foregroundColor(.white)
                                 .padding(.top, 10)
                             Text("Изменить изображение")
-                                .foregroundColor(Color("info"))
+                                .foregroundColor(Color(.white))
                                 .font(.custom(WSFont.light, size: 18))
                                 .padding(10)
                         }
@@ -50,7 +50,7 @@ struct WSImageView: View {
                     Image(systemName: "photo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 150)
+                        .frame(maxWidth: 100)
                         .foregroundColor(Color("info"))
                         .padding(.top, 50)
                     Text("+ Нет изображения")
@@ -98,6 +98,6 @@ struct WSImageView: View {
 
 struct WSImageView_Previews: PreviewProvider {
     static var previews: some View {
-        WSImageView(selectedImage: .init(get: { UIImage(named: "plant1") }, set: { _ in }), isEdit: .init(get: { true }, set: { _ in }))
+        WSImageView(selectedImage: .init(get: { UIImage(named: "plant1") }, set: { _ in }), isEdit: true )
     }
 }
