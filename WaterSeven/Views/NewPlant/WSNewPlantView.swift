@@ -11,34 +11,44 @@ struct WSNewPlantView: View {
     
     @ObservedObject private var viewModel = WSNewPlantViewModel()
     @State private var isAllertShow = false
+    @State private var imageSize = CGSize()
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack(spacing: 0) {
             header
-            WSImageView(selectedImage: $viewModel.image, isEdit: true)
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-                    WSTextField(placeholder: "Название*", text: $viewModel.name)
-                        .padding(.top, 30)
-                    WSTextField(placeholder: "Комментарий", text: $viewModel.comment)
-                        .padding(.top, 20)
-                    WSWateringRegimeView()
-                        .padding()
-                }
-                .background {
-                    Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .scaleEffect(1)
-                        .blur(radius: 40)
-                        .colorMultiply(Color("backgroundFirst").opacity(0.3))
+            ZStack(alignment: .top) {
+                WSImageView(selectedImage: $viewModel.image, isEdit: true)
+                    .readSize { size in imageSize = size }
+                VStack(spacing: 0)  {
+//                    Spacer(minLength: imageSize.height/1.6)
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            WSTextField(placeholder: "Название*", text: $viewModel.name)
+                                .padding(.top, 30)
+                            WSTextField(placeholder: "Комментарий", text: $viewModel.comment)
+                                .padding(.top, 20)
+                            WSWateringRegimeView()
+                                .padding()
+                            Spacer(minLength: 300)
+                        }
+                        .background {
+                            Image(uiImage: viewModel.image ?? UIImage(named: "defaultImage")!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .scaleEffect(1)
+                                .blur(radius: 40)
+                                .colorMultiply(Color("backgroundFirst").opacity(0.5))
+                        }
+                        .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.9), Color("backgroundFirst").opacity(0)]), startPoint: .top, endPoint: .bottom))
+                        .cornerRadius(30)
+                    }
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0), Color("backgroundFirst").opacity(0.9)]), startPoint: .top, endPoint: .bottom))
+                    .ignoresSafeArea()
+                    .offset(y: imageSize.height/1.6)
                 }
             }
-            .background(WSRoundedCornersShape(corners: [.topLeft, .topRight], radius: 30).fill(Color("backgroundFirst").opacity(0.9)))
-            .padding(.top, -30)
-            
-            Spacer()
         }
         .interactiveDismissDisabled()
         .alert("Изменения не сохранятся", isPresented: $isAllertShow) {

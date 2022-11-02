@@ -9,7 +9,7 @@ import UIKit
 
 class WSNewPlantViewModel: WSViewModel, ObservableObject {
     
-    @Published var image: UIImage?
+    @Published var image: UIImage? = UIImage(named: "plant1")
     @Published var name = ""
     @Published var comment = ""
     

@@ -22,9 +22,9 @@ struct WSImageView: View {
                 ZStack(alignment: .top) {
                     Image(uiImage: selectedImage!)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity)
-                    
+                        .aspectRatio(contentMode: .fit)
+ 
                     if isEdit {
                         VStack() {
                             Image(systemName: "photo")
@@ -98,6 +98,6 @@ struct WSImageView: View {
 
 struct WSImageView_Previews: PreviewProvider {
     static var previews: some View {
-        WSImageView(selectedImage: .init(get: { UIImage(named: "plant1") }, set: { _ in }), isEdit: true )
+       WSNewPlantView()
     }
 }
