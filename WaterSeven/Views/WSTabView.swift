@@ -23,7 +23,7 @@ struct WSTabView: View {
                 Image(systemName: "house")
                 Text("главная")
             }.tag(1)
-            WSNewPlantView()
+            WSPlantSquareCell(vm: WSPlantSquareCellVM(plant: WSPlant(name: "Фикус Георгий третий", comment: "комментарий короткий", image: "plant2", period: 0, wateringSchedule: [], history: [] ), parent: self))
                 .tabItem {
                 Image(systemName: "gearshape")
                 Text("настройки")
