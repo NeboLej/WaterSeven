@@ -92,7 +92,7 @@ struct WSPlantSquareCell: View {
                     .shadow(color: Color.black.opacity(0.3), radius: 1, x: 0, y: -3)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }
-            .frame(maxWidth: 163, maxHeight: 222)
+//            .frame(maxWidth: 163, maxHeight: 222)
     }
 }
 

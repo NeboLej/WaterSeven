@@ -12,7 +12,7 @@ protocol WSPlantSquareActionProtocol {
     func onClickSuccess(plantId: String)
 }
 
-class WSPlantSquareCellVM: ObservableObject {
+class WSPlantSquareCellVM: ObservableObject , Identifiable {
     
     let id: String
     let parent: Any?
