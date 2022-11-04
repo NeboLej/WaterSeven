@@ -10,8 +10,8 @@
 		FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */; };
 		FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA304769291264F8004E7292 /* WSRegimeView.swift */; };
 		FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4335D42909C25E000278A1 /* WSTextField.swift */; };
-		FA4CDFBD2914941300751AD3 /* PlantSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBC2914941300751AD3 /* PlantSquareCell.swift */; };
-		FA4CDFBF2914942C00751AD3 /* PlantSquareCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBE2914942C00751AD3 /* PlantSquareCellVM.swift */; };
+		FA4CDFBD2914941300751AD3 /* WSPlantSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */; };
+		FA4CDFBF2914942C00751AD3 /* WSPlantSquareCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBE2914942C00751AD3 /* WSPlantSquareCellVM.swift */; };
 		FA4CDFC12914953100751AD3 /* WSPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFC02914953100751AD3 /* WSPlant.swift */; };
 		FA5DE2A62909E9CA0069CFA5 /* WSLeafView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */; };
 		FA5DE2A82909EF350069CFA5 /* WSWateringRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */; };
@@ -48,14 +48,15 @@
 		FAF63767290D433400F49694 /* WSPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF63766290D433400F49694 /* WSPlantViewModel.swift */; };
 		FAF63769290D434500F49694 /* WSPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF63768290D434500F49694 /* WSPlantView.swift */; };
 		FAF6376B290D453300F49694 /* WSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6376A290D453300F49694 /* WSImageView.swift */; };
+		FAFE465029155F7000CA54B2 /* WSCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE464F29155F7000CA54B2 /* WSCarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarCell.swift; sourceTree = "<group>"; };
 		FA304769291264F8004E7292 /* WSRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRegimeView.swift; sourceTree = "<group>"; };
 		FA4335D42909C25E000278A1 /* WSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTextField.swift; sourceTree = "<group>"; };
-		FA4CDFBC2914941300751AD3 /* PlantSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSquareCell.swift; sourceTree = "<group>"; };
-		FA4CDFBE2914942C00751AD3 /* PlantSquareCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSquareCellVM.swift; sourceTree = "<group>"; };
+		FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantSquareCell.swift; sourceTree = "<group>"; };
+		FA4CDFBE2914942C00751AD3 /* WSPlantSquareCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantSquareCellVM.swift; sourceTree = "<group>"; };
 		FA4CDFC02914953100751AD3 /* WSPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlant.swift; sourceTree = "<group>"; };
 		FA5DE2A52909E9CA0069CFA5 /* WSLeafView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSLeafView.swift; sourceTree = "<group>"; };
 		FA5DE2A72909EF350069CFA5 /* WSWateringRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSWateringRegimeView.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		FAF63766290D433400F49694 /* WSPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantViewModel.swift; sourceTree = "<group>"; };
 		FAF63768290D434500F49694 /* WSPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantView.swift; sourceTree = "<group>"; };
 		FAF6376A290D453300F49694 /* WSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImageView.swift; sourceTree = "<group>"; };
+		FAFE464F29155F7000CA54B2 /* WSCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +111,8 @@
 		FA4CDFBB2914939D00751AD3 /* PlantCells */ = {
 			isa = PBXGroup;
 			children = (
-				FA4CDFBC2914941300751AD3 /* PlantSquareCell.swift */,
-				FA4CDFBE2914942C00751AD3 /* PlantSquareCellVM.swift */,
+				FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */,
+				FA4CDFBE2914942C00751AD3 /* WSPlantSquareCellVM.swift */,
 			);
 			path = PlantCells;
 			sourceTree = "<group>";
@@ -256,6 +258,7 @@
 				FA304769291264F8004E7292 /* WSRegimeView.swift */,
 				FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */,
 				FAF6376A290D453300F49694 /* WSImageView.swift */,
+				FAFE464F29155F7000CA54B2 /* WSCarouselView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -421,11 +424,12 @@
 				FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */,
 				FAF6376B290D453300F49694 /* WSImageView.swift in Sources */,
 				FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */,
-				FA4CDFBD2914941300751AD3 /* PlantSquareCell.swift in Sources */,
+				FA4CDFBD2914941300751AD3 /* WSPlantSquareCell.swift in Sources */,
 				FA9D17A129018449006BB413 /* WSAllPlantsView.swift in Sources */,
 				FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */,
 				FA4CDFC12914953100751AD3 /* WSPlant.swift in Sources */,
 				FAF0811328FC2F1E007091B1 /* WSReposlitoryLocal.swift in Sources */,
+				FAFE465029155F7000CA54B2 /* WSCarouselView.swift in Sources */,
 				FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */,
 				FAD07161290E040D00EC71E7 /* WSCalendarVM.swift in Sources */,
 				FAF0810728FC2BCC007091B1 /* WSFont.swift in Sources */,
@@ -434,7 +438,7 @@
 				FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */,
 				FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */,
 				FA5DE2A62909E9CA0069CFA5 /* WSLeafView.swift in Sources */,
-				FA4CDFBF2914942C00751AD3 /* PlantSquareCellVM.swift in Sources */,
+				FA4CDFBF2914942C00751AD3 /* WSPlantSquareCellVM.swift in Sources */,
 				FA9D179929017A40006BB413 /* WSRoundedCornersShape.swift in Sources */,
 				FAF0812D290170ED007091B1 /* WSButtons.swift in Sources */,
 				FAD642282902CED6009E8F98 /* WSNewPlantViewModel.swift in Sources */,
