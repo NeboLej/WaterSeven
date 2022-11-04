@@ -19,9 +19,10 @@ struct WSPlantView: View {
     
     private let row = GridItem(.fixed(30))
     
-    @ObservedObject var viewModel = WSPlantViewModel(service: "service")
+    @ObservedObject var viewModel: WSPlantViewModel
     
-    init() {
+    init(viewModel: WSPlantViewModel) {
+        self.viewModel = viewModel
         comment = viewModel.comment
         name = viewModel.name
     }
@@ -161,6 +162,6 @@ struct WSPlantView: View {
 
 struct WSPlantView_Previews: PreviewProvider {
     static var previews: some View {
-        WSPlantView()
+        WSPlantView(viewModel: WSPlantViewModel(plant: WSPlant(name: "Олег", comment: "комментарий некоторой длинны", image: "plant1", period: 3, wateringSchedule: [])))
     }
 }

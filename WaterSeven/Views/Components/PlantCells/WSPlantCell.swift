@@ -7,21 +7,23 @@
 
 import SwiftUI
 
-struct WSPlantCellView: View {
+struct WSPlantCell: View {
     
-    @State var viewModel = WSPlantVM(name: "Кактус", image: "plant1", comment: "asdadas da d")
+    @ObservedObject var vm: WSPlantCellVM
+    @State private var cellSize = CGSize()
     
     var body: some View {
         HStack {
-            Image(viewModel.image)
+            Image(vm.image)
                 .resizable()
-                .scaledToFit()
-                
+                .aspectRatio(contentMode: .fit)
+            
+            
             VStack( alignment: .leading ) {
-                Text(viewModel.name)
+                Text(vm.name)
                     .foregroundColor(.white)
                     .font(.custom(WSFont.medium, size: 20))
-                Text(viewModel.comment)
+                Text(vm.comment)
                     .foregroundColor(.white)
                     .font(.custom(WSFont.medium, size: 10))
                 Spacer()
@@ -37,7 +39,7 @@ struct WSPlantCellView: View {
             .padding([.top, .bottom], 12)
             Spacer()
             WSButtonOne(action: {
-                viewModel.clickComplite()
+                vm.clickComplite()
             }, label: Text("Полил") )
             .padding(.trailing, 13)
         }
@@ -48,6 +50,6 @@ struct WSPlantCellView: View {
 
 struct WSPlantCellView_Previews: PreviewProvider {
     static var previews: some View {
-        WSPlantCellView(viewModel: WSPlantVM(name: "Кактус", image: "plant1", comment: "комментарий 1 ывфы "))
+        WSPlantCell(vm: WSPlantCellVM(plant: WSPlant(name: "Привет Андрей", comment: "комментарий к растению", image: "plant2", period: 2, wateringSchedule: []), parent: self))
     }
 }

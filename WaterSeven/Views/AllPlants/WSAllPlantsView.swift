@@ -32,7 +32,7 @@ struct WSAllPlantsView: View {
             }.background(Color("backgroundFirst"))
             List {
                 ForEach(viewModel.plants) { plant in
-                    WSPlantCellView( viewModel: plant )
+                    WSPlantCell(vm: plant)
                         .listRowInsets(EdgeInsets(top: 7, leading: 10, bottom: 7, trailing: 10))
                         .listRowSeparator(.hidden)
                         .listItemTint(.clear)

@@ -42,8 +42,8 @@
 		FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811628FC313E007091B1 /* WSViewModel.swift */; };
 		FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */; };
 		FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */; };
-		FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF081262900997B007091B1 /* WSPlantCellView.swift */; };
-		FAF0812B29016E50007091B1 /* WSPlantVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0812A29016E50007091B1 /* WSPlantVM.swift */; };
+		FAF081272900997B007091B1 /* WSPlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF081262900997B007091B1 /* WSPlantCell.swift */; };
+		FAF0812B29016E50007091B1 /* WSPlantCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0812A29016E50007091B1 /* WSPlantCellVM.swift */; };
 		FAF0812D290170ED007091B1 /* WSButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0812C290170ED007091B1 /* WSButtons.swift */; };
 		FAF63767290D433400F49694 /* WSPlantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF63766290D433400F49694 /* WSPlantViewModel.swift */; };
 		FAF63769290D434500F49694 /* WSPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF63768290D434500F49694 /* WSPlantView.swift */; };
@@ -88,8 +88,8 @@
 		FAF0811628FC313E007091B1 /* WSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSViewModel.swift; sourceTree = "<group>"; };
 		FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeViewModel.swift; sourceTree = "<group>"; };
 		FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServiceFactoryMock.swift; sourceTree = "<group>"; };
-		FAF081262900997B007091B1 /* WSPlantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantCellView.swift; sourceTree = "<group>"; };
-		FAF0812A29016E50007091B1 /* WSPlantVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantVM.swift; sourceTree = "<group>"; };
+		FAF081262900997B007091B1 /* WSPlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantCell.swift; sourceTree = "<group>"; };
+		FAF0812A29016E50007091B1 /* WSPlantCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantCellVM.swift; sourceTree = "<group>"; };
 		FAF0812C290170ED007091B1 /* WSButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSButtons.swift; sourceTree = "<group>"; };
 		FAF63766290D433400F49694 /* WSPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantViewModel.swift; sourceTree = "<group>"; };
 		FAF63768290D434500F49694 /* WSPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantView.swift; sourceTree = "<group>"; };
@@ -111,8 +111,10 @@
 		FA4CDFBB2914939D00751AD3 /* PlantCells */ = {
 			isa = PBXGroup;
 			children = (
-				FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */,
 				FA4CDFBE2914942C00751AD3 /* WSPlantSquareCellVM.swift */,
+				FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */,
+				FAF0812A29016E50007091B1 /* WSPlantCellVM.swift */,
+				FAF081262900997B007091B1 /* WSPlantCell.swift */,
 			);
 			path = PlantCells;
 			sourceTree = "<group>";
@@ -124,15 +126,6 @@
 				FAF080F328FAFEB7007091B1 /* WSHomeView.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		FA9D179B29018227006BB413 /* PlantCell */ = {
-			isa = PBXGroup;
-			children = (
-				FAF0812A29016E50007091B1 /* WSPlantVM.swift */,
-				FAF081262900997B007091B1 /* WSPlantCellView.swift */,
-			);
-			path = PlantCell;
 			sourceTree = "<group>";
 		};
 		FA9D179C29018248006BB413 /* TodayWater */ = {
@@ -247,7 +240,6 @@
 				FAD0715F290E03F300EC71E7 /* Calendar */,
 				FA9D17A929018508006BB413 /* Base */,
 				FA9D179C29018248006BB413 /* TodayWater */,
-				FA9D179B29018227006BB413 /* PlantCell */,
 				FAF0812E290179F4007091B1 /* Ext */,
 				FAF0812C290170ED007091B1 /* WSButtons.swift */,
 				FA9D179829017A40006BB413 /* WSRoundedCornersShape.swift */,
@@ -405,7 +397,7 @@
 			files = (
 				FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */,
 				FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */,
-				FAF081272900997B007091B1 /* WSPlantCellView.swift in Sources */,
+				FAF081272900997B007091B1 /* WSPlantCell.swift in Sources */,
 				FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */,
 				FAD0715E290DB6AE00EC71E7 /* Date +.swift in Sources */,
 				FAF63769290D434500F49694 /* WSPlantView.swift in Sources */,
@@ -419,7 +411,7 @@
 				FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */,
 				FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */,
 				FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */,
-				FAF0812B29016E50007091B1 /* WSPlantVM.swift in Sources */,
+				FAF0812B29016E50007091B1 /* WSPlantCellVM.swift in Sources */,
 				FAD0715C290D9B4900EC71E7 /* WSCalendarView.swift in Sources */,
 				FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */,
 				FAF6376B290D453300F49694 /* WSImageView.swift in Sources */,

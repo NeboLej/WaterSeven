@@ -32,7 +32,7 @@ struct WSPlantSquareCell: View {
                         imageSize = size
                     }
                     .padding(.bottom, -imageSize.height/5)
-                if isWatering {
+                if vm.isWatering {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color("background"), lineWidth: 2)
@@ -42,6 +42,9 @@ struct WSPlantSquareCell: View {
                         .rotationEffect(.init(radians: -.pi/9))
 
                 }
+            }
+            .onTapGesture {
+                vm.onClick()
             }
 
             VStack(alignment: .leading, spacing: 0) {
