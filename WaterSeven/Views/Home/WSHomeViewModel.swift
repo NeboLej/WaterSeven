@@ -7,9 +7,19 @@
 
 import Foundation
 
-class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtocol {
+class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtocol, WSPlantCellActionListenerProtocol {
 
     private let basePlants: [WSPlant] = [
+        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
+        WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ),
+        WSPlant(name: "вашему вниманию предоставляется", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
+        WSPlant(name: "Олег44", comment: "коммент", image: "plant2", period: 1, wateringSchedule: [] ),
+        WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] ),
+        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
+        WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ),
+        WSPlant(name: "Цветок", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
+        WSPlant(name: "Олег44", comment: "коммент", image: "plant2", period: 1, wateringSchedule: [] ),
+        WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] ),
         WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
         WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ),
         WSPlant(name: "Цветок", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
@@ -17,7 +27,7 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
         WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] )
     ]
     
-    @Published var plants1: [WSPlantCellVM] = []
+//    @Published var plants1: [WSPlantCellVM] = []
     @Published var plantsToday: [WSPlantSquareCellVM] = []
     @Published var plants: [WSPlantCellVM] = []
     @Published var isGoToSheet = false
@@ -30,7 +40,7 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
         
         weak var _self = self
         
-        plants1 = []
+//        plants1 = []
         
         plantsToday = basePlants.map { WSPlantSquareCellVM(plant: $0, parent: _self) }
         plants = basePlants.map { WSPlantCellVM(plant: $0, parent: _self) }

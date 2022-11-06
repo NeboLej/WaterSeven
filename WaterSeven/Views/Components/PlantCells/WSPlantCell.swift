@@ -18,7 +18,6 @@ struct WSPlantCell: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            
             VStack( alignment: .leading ) {
                 Text(vm.name)
                     .foregroundColor(.white)
@@ -38,13 +37,12 @@ struct WSPlantCell: View {
             }
             .padding([.top, .bottom], 12)
             Spacer()
-            WSButtonOne(action: {
-                vm.clickComplite()
-            }, label: Text("Полил") )
-            .padding(.trailing, 13)
         }
         .frame(height: 85)
-        .background(WSRoundedCornersShape(corners: [.topRight, .bottomRight], radius: 27).fill(Color("backgroundFirst")))
+        .background(WSRoundedCornersShape(corners: [.topRight, .bottomRight], radius: 27).fill(Color("backgroundFirst").opacity(0.95)))
+        .onTapGesture {
+            vm.onClick()
+        }
     }
 }
 

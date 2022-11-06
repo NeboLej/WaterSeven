@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-let size = UIScreen.main.bounds
-
 struct WSTodayWaterView: View {
+    
+    @State var wateringToday: [String]
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 40)
@@ -28,10 +29,17 @@ struct WSTodayWaterView: View {
                     
                 }
                 HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        WSTodayWaterListView(text: "Фикус Георгий")
-                        WSTodayWaterListView(text: "Ромашка полевая")
-                    }
+                    
+//                    VStack(alignment: .leading, spacing: 4) {
+                        ScrollView(.vertical, showsIndicators: false) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                ForEach(wateringToday, id: \.self) { name in
+                                    WSTodayWaterListView(text: name)
+                                }
+                            }
+                        }
+//                    }
+                    .padding(.vertical)
                     Spacer()
                     Image("flower1")
                         .resizable()
@@ -51,10 +59,11 @@ struct WSTodayWaterListView: View {
     @State var text: String
     
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Circle()
                 .frame(width: 7, height: 7)
                 .foregroundColor(Color("backgroundTwo"))
+                .padding(.top, 5)
             Text(text)
                 .font(.custom("AvenirNext-Medium", size: 13))
                 .foregroundColor(Color("textTitle1"))
@@ -65,9 +74,7 @@ struct WSTodayWaterListView: View {
 struct WSTodayWaterView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WSTodayWaterView()
-                .previewDevice("iPhone SE (3rd generation)")
-//            WSTodayWaterListView(text: "Фикус")
+            WSTodayWaterView(wateringToday: ["Никита", "Стас", "Гена и дюша метелкин"])
         }
     }
 }

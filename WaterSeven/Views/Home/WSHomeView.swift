@@ -13,15 +13,22 @@ struct WSHomeView: View {
     @State var isSheet = false
     
     var body: some View {
-        ScrollView {
-            WSTodayWaterView()
-                .frame(height: size.height / 2.5)
-                .padding(.bottom, 23)
-            WSCarouselView(cellsVM: $viewModel.plantsToday)
+        ScrollView(.vertical, showsIndicators: false) {
+            WSTodayWaterView(wateringToday: viewModel.plantsToday.map{ $0.name })
+                .frame(height: screenSize.height / 2.5)
+//                .padding(.bottom, -160)
+            ZStack(alignment: .center) {
+                
+                Rectangle()
+                    .fill(Color("backgroundFirst"))
+                    .frame(height: 100)
+                WSCarouselView(cellsVM: $viewModel.plantsToday)
+            }
+            
             ForEach(viewModel.plants) { plant in
                 WSPlantCell(vm: plant)
             }
-            .padding(.horizontal, 11)
+            .padding(.horizontal, 10)
         }.background(Color("background"))
             .sheet(isPresented: $viewModel.isGoToSheet) {
                 
