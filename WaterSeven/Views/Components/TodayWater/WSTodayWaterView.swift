@@ -28,9 +28,13 @@ struct WSTodayWaterView: View {
                         .font(.custom("AvenirNext-Light", size: 10))
                     
                 }
+                
                 HStack {
-                    
-//                    VStack(alignment: .leading, spacing: 4) {
+                    if wateringToday.isEmpty {
+                        Text("Сегодня нет растений, требующих полива")
+                            .font(.custom(WSFont.medium, size: 13))
+                            .foregroundColor(Color("background3"))
+                    } else {
                         ScrollView(.vertical, showsIndicators: false) {
                             VStack(alignment: .leading, spacing: 4) {
                                 ForEach(wateringToday, id: \.self) { name in
@@ -38,8 +42,8 @@ struct WSTodayWaterView: View {
                                 }
                             }
                         }
-//                    }
-                    .padding(.vertical)
+                        .padding(.vertical)
+                    }
                     Spacer()
                     Image("flower1")
                         .resizable()
@@ -65,8 +69,8 @@ struct WSTodayWaterListView: View {
                 .foregroundColor(Color("backgroundTwo"))
                 .padding(.top, 5)
             Text(text)
-                .font(.custom("AvenirNext-Medium", size: 13))
-                .foregroundColor(Color("textTitle1"))
+                .font(.custom(WSFont.medium, size: 13))
+                .foregroundColor(Color("background3"))
         }
     }
 }
@@ -74,7 +78,7 @@ struct WSTodayWaterListView: View {
 struct WSTodayWaterView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WSTodayWaterView(wateringToday: ["Никита", "Стас", "Гена и дюша метелкин"])
+            WSTodayWaterView(wateringToday: [])
         }
     }
 }
