@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WSNewPlantView: View {
     
-    @ObservedObject private var viewModel = WSNewPlantViewModel()
+    @ObservedObject var viewModel: WSNewPlantViewModel
     @State private var isAllertShow = false
     @State private var imageSize = CGSize()
     @Environment(\.dismiss) private var dismiss
@@ -96,6 +96,6 @@ struct WSNewPlantView: View {
 
 struct WSNewPlantView_Previews: PreviewProvider {
     static var previews: some View {
-        WSNewPlantView()
+        WSNewPlantView(viewModel: .init())
     }
 }

@@ -32,7 +32,7 @@ struct WSTodayWaterView: View {
                 HStack {
                     if wateringToday.isEmpty {
                         Text("Сегодня нет растений, требующих полива")
-                            .font(.custom(WSFont.medium, size: 13))
+                            .font(.custom(WSFont.medium, size: 15))
                             .foregroundColor(Color("background3"))
                     } else {
                         ScrollView(.vertical, showsIndicators: false) {

@@ -44,7 +44,7 @@ struct WSAllPlantsView: View {
             .disabled(true)
         }
         .sheet(isPresented: $isShowNewPlantSheet) {
-            WSNewPlantView()
+            WSNewPlantView(viewModel: .init())
         }
     }
 }
