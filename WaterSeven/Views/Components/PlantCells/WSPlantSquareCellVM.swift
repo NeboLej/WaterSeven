@@ -34,4 +34,8 @@ class WSPlantSquareCellVM: ObservableObject , Identifiable {
     func onClickSuccess() {
         (parent as! WSPlantSquareActionProtocol).onClickSuccess(plantId: id)
     }
+    
+    func onClick() {
+        (parent as! WSPlantSquareActionProtocol).onClick(plantId: id)
+    }
 }

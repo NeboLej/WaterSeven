@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-let size = UIScreen.main.bounds
-
 struct WSTodayWaterView: View {
+    
+    @State var wateringToday: [String]
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 40)
@@ -27,10 +28,21 @@ struct WSTodayWaterView: View {
                         .font(.custom("AvenirNext-Light", size: 10))
                     
                 }
+                
                 HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        WSTodayWaterListView(text: "Фикус Георгий")
-                        WSTodayWaterListView(text: "Ромашка полевая")
+                    if wateringToday.isEmpty {
+                        Text("Сегодня нет растений, требующих полива")
+                            .font(.custom(WSFont.medium, size: 15))
+                            .foregroundColor(Color("background3"))
+                    } else {
+                        ScrollView(.vertical, showsIndicators: false) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                ForEach(wateringToday, id: \.self) { name in
+                                    WSTodayWaterListView(text: name)
+                                }
+                            }
+                        }
+                        .padding(.vertical)
                     }
                     Spacer()
                     Image("flower1")
@@ -51,13 +63,14 @@ struct WSTodayWaterListView: View {
     @State var text: String
     
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Circle()
                 .frame(width: 7, height: 7)
                 .foregroundColor(Color("backgroundTwo"))
+                .padding(.top, 5)
             Text(text)
-                .font(.custom("AvenirNext-Medium", size: 13))
-                .foregroundColor(Color("textTitle1"))
+                .font(.custom(WSFont.medium, size: 13))
+                .foregroundColor(Color("background3"))
         }
     }
 }
@@ -65,9 +78,7 @@ struct WSTodayWaterListView: View {
 struct WSTodayWaterView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WSTodayWaterView()
-                .previewDevice("iPhone SE (3rd generation)")
-//            WSTodayWaterListView(text: "Фикус")
+            WSTodayWaterView(wateringToday: [])
         }
     }
 }

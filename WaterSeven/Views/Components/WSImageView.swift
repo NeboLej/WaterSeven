@@ -98,6 +98,6 @@ struct WSImageView: View {
 
 struct WSImageView_Previews: PreviewProvider {
     static var previews: some View {
-       WSNewPlantView()
+        WSNewPlantView(viewModel: .init())
     }
 }

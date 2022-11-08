@@ -23,13 +23,7 @@ struct WSTabView: View {
                 Image(systemName: "house")
                 Text("главная")
             }.tag(1)
-            WSCarouselView(cellsVM: [
-                .init(plant: WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [] ), parent: nil),
-                .init(plant: WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ), parent: nil),
-                .init(plant: WSPlant(name: "Цветок", comment: "", image: "plant1", period: 1, wateringSchedule: [] ), parent: nil),
-                .init(plant: WSPlant(name: "Олег44", comment: "коммент", image: "plant2", period: 1, wateringSchedule: [] ), parent: nil),
-                .init(plant: WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] ), parent: nil)
-            ])
+            WSSettingsView()
                 .tabItem {
                 Image(systemName: "gearshape")
                 Text("настройки")

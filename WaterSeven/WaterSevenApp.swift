@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let screenSize = UIScreen.main.bounds
+
 @main
 struct WaterSevenApp: App {
     
