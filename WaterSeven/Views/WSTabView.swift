@@ -13,7 +13,7 @@ struct WSTabView: View {
     
     var body: some View {
         TabView(selection: $selectionTab) {
-            WSAllPlantsView()
+            WSAllPlantsView(viewModel: WSAllPlantsViewModel())
                 .tabItem {
                 Image(systemName: "list.bullet")
                 Text("мои растения")

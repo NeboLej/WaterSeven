@@ -9,48 +9,43 @@ import SwiftUI
 
 struct WSAllPlantsView: View {
     
-    private let viewModel = WSAllPlantsViewModel()
-    @State private var isShowNewPlantSheet = false
+    @ObservedObject var viewModel: WSAllPlantsViewModel
 
-    init() {
+    init(viewModel: WSAllPlantsViewModel) {
+        self.viewModel = viewModel
+        
         UITableView.appearance().backgroundColor = UIColor(named: "background")
     }
     
     var body: some View {
-        VStack(spacing: 0.0) {
+        VStack(spacing: 0) {
             HStack {
                 Spacer()
                 Button {
-                    isShowNewPlantSheet = true
+                    viewModel.addPlant()
                 } label: {
                     Text("Добавить растение")
-                        .multilineTextAlignment(.trailing)
-                        .lineLimit(2)
                         .foregroundColor(Color("background3"))
                 }
                 .padding()
             }.background(Color("backgroundFirst"))
-            List {
-                ForEach(viewModel.plants) { plant in
-                    WSPlantCell(vm: plant)
-                        .listRowInsets(EdgeInsets(top: 7, leading: 10, bottom: 7, trailing: 10))
-                        .listRowSeparator(.hidden)
-                        .listItemTint(.clear)
-                        .buttonStyle(.plain)
-                        .listRowBackground(Color("background"))
-                }
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach(viewModel.plantsVM) { vm in
+                    WSPlantCell(vm: vm)
+                }.padding([.horizontal, .top], 10)
             }
-            .listStyle(.grouped)
-            .disabled(true)
+        }.background(Color("background"))
+            .sheet(isPresented: $viewModel.isGoToNewPlantSheet) {
+            WSNewPlantView(viewModel: viewModel.newPlantSheet)
         }
-        .sheet(isPresented: $isShowNewPlantSheet) {
-            WSNewPlantView(viewModel: .init())
+        .sheet(isPresented: $viewModel.isGoToPlantSheet) {
+            WSPlantView(viewModel: viewModel.plantSheet)
         }
     }
 }
 
 struct WSAllPlantsView_Previews: PreviewProvider {
     static var previews: some View {
-        WSAllPlantsView()
+        WSAllPlantsView(viewModel: WSAllPlantsViewModel())
     }
 }
