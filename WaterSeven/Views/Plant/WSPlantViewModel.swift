@@ -46,8 +46,6 @@ class WSPlantViewModel: WSViewModel, ObservableObject {
     }
 }
 
-
-
 //TEST
 func getSampleDate(offset: Int) -> Date {
     let calendar = Calendar.current

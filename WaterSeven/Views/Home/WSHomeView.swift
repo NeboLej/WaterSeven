@@ -10,7 +10,6 @@ import SwiftUI
 struct WSHomeView: View {
     
     @ObservedObject var viewModel: WSHomeViewModel
-    @State var isSheet = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -95,6 +94,6 @@ struct WSHomeView: View {
 struct WSHomeView_Previews: PreviewProvider {
     static var previews: some View {
         WSHomeView(viewModel: WSHomeViewModel())
-        //        emptyPlant
+//        emptyPlant
     }
 }

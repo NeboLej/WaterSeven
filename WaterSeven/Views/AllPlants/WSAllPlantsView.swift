@@ -19,17 +19,8 @@ struct WSAllPlantsView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
-                Spacer()
-                Button {
-                    viewModel.addPlant()
-                } label: {
-                    Text("Добавить растение")
-                        .foregroundColor(Color("background3"))
-                }
-                .padding()
-            }.background(Color("backgroundFirst"))
             ScrollView(.vertical, showsIndicators: false) {
+                header
                 ForEach(viewModel.plantsVM) { vm in
                     WSPlantCell(vm: vm)
                 }.padding([.horizontal, .top], 10)
@@ -41,6 +32,29 @@ struct WSAllPlantsView: View {
         .sheet(isPresented: $viewModel.isGoToPlantSheet) {
             WSPlantView(viewModel: viewModel.plantSheet)
         }
+    }
+    
+    var header: some View {
+        
+        ZStack {
+            Circle()
+                .fill(AngularGradient(colors: [.green ,.blue, .green], center: .center))
+                .offset(x: -100, y: 100)
+                
+            WSGlassView {
+                VStack{
+                    Text("Текст 1")
+                        .foregroundColor(.black)
+                    Text("Текст 2")
+                    Text("Текст 3")
+                    WSButtonOne(action: {
+                        viewModel.addPlant()
+                    }, label: Text("Добавить растение"))
+                }
+            }
+        }
+        .frame(height: 150)
+        .padding(.horizontal, 10)
     }
 }
 

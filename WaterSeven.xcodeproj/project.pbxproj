@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */; };
+		FA107335291EC77800B7E7C3 /* Blur +.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA107334291EC77800B7E7C3 /* Blur +.swift */; };
+		FA1AC31D291EB8C80023D330 /* WSGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC31C291EB8C80023D330 /* WSGlassView.swift */; };
 		FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA304769291264F8004E7292 /* WSRegimeView.swift */; };
 		FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4335D42909C25E000278A1 /* WSTextField.swift */; };
 		FA4CDFBD2914941300751AD3 /* WSPlantSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */; };
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarCell.swift; sourceTree = "<group>"; };
+		FA107334291EC77800B7E7C3 /* Blur +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blur +.swift"; sourceTree = "<group>"; };
+		FA1AC31C291EB8C80023D330 /* WSGlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSGlassView.swift; sourceTree = "<group>"; };
 		FA304769291264F8004E7292 /* WSRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRegimeView.swift; sourceTree = "<group>"; };
 		FA4335D42909C25E000278A1 /* WSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTextField.swift; sourceTree = "<group>"; };
 		FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantSquareCell.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 				FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */,
 				FAF6376A290D453300F49694 /* WSImageView.swift */,
 				FAFE464F29155F7000CA54B2 /* WSCarouselView.swift */,
+				FA1AC31C291EB8C80023D330 /* WSGlassView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			children = (
 				FAD0715D290DB6AE00EC71E7 /* Date +.swift */,
 				FAB81C08290EFFA7008FD888 /* View +.swift */,
+				FA107334291EC77800B7E7C3 /* Blur +.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */,
+				FA1AC31D291EB8C80023D330 /* WSGlassView.swift in Sources */,
 				FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */,
 				FAF081272900997B007091B1 /* WSPlantCell.swift in Sources */,
 				FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */,
@@ -405,6 +412,7 @@
 				FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */,
 				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
 				FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */,
+				FA107335291EC77800B7E7C3 /* Blur +.swift in Sources */,
 				FAB81C09290EFFA7008FD888 /* View +.swift in Sources */,
 				FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */,
 				FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */,
