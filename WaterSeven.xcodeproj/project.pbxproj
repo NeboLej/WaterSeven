@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79ECC32884EE08A6FDB29186 /* Pods_WaterSeven.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F59E6F3D529D000BEC442CE4 /* Pods_WaterSeven.framework */; };
 		FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */; };
 		FA107335291EC77800B7E7C3 /* Blur +.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA107334291EC77800B7E7C3 /* Blur +.swift */; };
 		FA1AC31D291EB8C80023D330 /* WSGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC31C291EB8C80023D330 /* WSGlassView.swift */; };
@@ -54,6 +55,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F6F92E252E3F9BCB18C5F15 /* Pods-WaterSeven.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterSeven.debug.xcconfig"; path = "Target Support Files/Pods-WaterSeven/Pods-WaterSeven.debug.xcconfig"; sourceTree = "<group>"; };
+		E899D2B4DEAC6BA94DC7522E /* Pods-WaterSeven.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterSeven.release.xcconfig"; path = "Target Support Files/Pods-WaterSeven/Pods-WaterSeven.release.xcconfig"; sourceTree = "<group>"; };
+		F59E6F3D529D000BEC442CE4 /* Pods_WaterSeven.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterSeven.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarCell.swift; sourceTree = "<group>"; };
 		FA107334291EC77800B7E7C3 /* Blur +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blur +.swift"; sourceTree = "<group>"; };
 		FA1AC31C291EB8C80023D330 /* WSGlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSGlassView.swift; sourceTree = "<group>"; };
@@ -106,12 +110,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79ECC32884EE08A6FDB29186 /* Pods_WaterSeven.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03B5277A578EAEF3C230402C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F6F92E252E3F9BCB18C5F15 /* Pods-WaterSeven.debug.xcconfig */,
+				E899D2B4DEAC6BA94DC7522E /* Pods-WaterSeven.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		055AE41887C2E6D77CEB2051 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F59E6F3D529D000BEC442CE4 /* Pods_WaterSeven.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA4CDFBB2914939D00751AD3 /* PlantCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +212,8 @@
 			children = (
 				FAF080F028FAFEB7007091B1 /* WaterSeven */,
 				FAF080EF28FAFEB7007091B1 /* Products */,
+				03B5277A578EAEF3C230402C /* Pods */,
+				055AE41887C2E6D77CEB2051 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -338,9 +363,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAF080FC28FAFEBB007091B1 /* Build configuration list for PBXNativeTarget "WaterSeven" */;
 			buildPhases = (
+				672C5EC36C17AE5BA0E0CA8D /* [CP] Check Pods Manifest.lock */,
 				FAF080EA28FAFEB7007091B1 /* Sources */,
 				FAF080EB28FAFEB7007091B1 /* Frameworks */,
 				FAF080EC28FAFEB7007091B1 /* Resources */,
+				13DB6A9E3E5554B98899101C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +422,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13DB6A9E3E5554B98899101C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterSeven/Pods-WaterSeven-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterSeven/Pods-WaterSeven-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterSeven/Pods-WaterSeven-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		672C5EC36C17AE5BA0E0CA8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaterSeven-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAF080EA28FAFEB7007091B1 /* Sources */ = {
@@ -565,6 +634,7 @@
 		};
 		FAF080FD28FAFEBB007091B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F6F92E252E3F9BCB18C5F15 /* Pods-WaterSeven.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -597,6 +667,7 @@
 		};
 		FAF080FE28FAFEBB007091B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E899D2B4DEAC6BA94DC7522E /* Pods-WaterSeven.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
