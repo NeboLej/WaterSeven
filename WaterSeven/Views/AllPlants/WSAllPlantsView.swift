@@ -52,7 +52,7 @@ struct WSAllPlantsView: View {
         ZStack {
             WSGlassView(blurRadius: 10, saturation: 1.6, strokeGradient: LinearGradient(colors: [ .white.opacity(0.5), .clear, Color("backgroundFirst").opacity(0.1), Color("backgroundFirst").opacity(0.2)], startPoint: .topLeading, endPoint: .bottomTrailing)) {
                HStack(spacing: 0) {
-                   WSLottieView(name: "flower-animation2", play: $playAnimation)
+                   WSLottieView(name: "flower-animation2")
                        .frame(height: 270)
                        .opacity(0.8)
                        .mask {
