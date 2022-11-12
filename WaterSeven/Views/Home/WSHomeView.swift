@@ -14,7 +14,7 @@ struct WSHomeView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             WSTodayWaterView(wateringToday: viewModel.plantsToday.map{ $0.name })
-                .frame(height: screenSize.height / 2.5)
+                .frame(height: screenSize.height / 2.7)
             
             if !viewModel.plantsToday.isEmpty {
                 ZStack(alignment: .center) {
