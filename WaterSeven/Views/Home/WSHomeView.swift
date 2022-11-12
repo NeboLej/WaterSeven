@@ -10,12 +10,11 @@ import SwiftUI
 struct WSHomeView: View {
     
     @ObservedObject var viewModel: WSHomeViewModel
-    @State var isSheet = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             WSTodayWaterView(wateringToday: viewModel.plantsToday.map{ $0.name })
-                .frame(height: screenSize.height / 2.5)
+                .frame(height: screenSize.height / 2.7)
             
             if !viewModel.plantsToday.isEmpty {
                 ZStack(alignment: .center) {
@@ -29,10 +28,11 @@ struct WSHomeView: View {
             if !viewModel.plants.isEmpty {
                 VStack(alignment: .leading) {
                     Text("В ближайшие дни")
-                        .font(.custom(WSFont.medium, size: 20))
+                        .font(.custom(WSFont.medium, size: 22))
                         .foregroundColor(Color("backgroundFirst"))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, 10)
+                        .padding(.bottom, 1)
                     Rectangle()
                         .fill(Color("backgroundFirst"))
                         .frame(width: screenSize.width/1.4 ,height: 3)
@@ -94,6 +94,6 @@ struct WSHomeView: View {
 struct WSHomeView_Previews: PreviewProvider {
     static var previews: some View {
         WSHomeView(viewModel: WSHomeViewModel())
-        //        emptyPlant
+//        emptyPlant
     }
 }
