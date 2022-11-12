@@ -45,7 +45,6 @@ struct WSGlassView<Content>: View where Content : View {
             .shadow(color: .black.opacity(0.15), radius: 5, x: 10, y: -10)
             .overlay(content: {
                 content
-//                    .modifier(BlurModifier(font: .callout))
                     .padding(20)
                     .shadow(radius: 5)
 //                    .blendMode(.overlay)
@@ -54,17 +53,6 @@ struct WSGlassView<Content>: View where Content : View {
         }
     }
 }
-
-//fileprivate struct BlurModifier: ViewModifier {
-//    var font: Font
-//
-//    func body(content: Content) -> some View{
-//        content
-////            .font(font)
-//            .foregroundColor(.white)
-//            .shadow(radius: 15)
-//    }
-//}
 
 fileprivate struct WSCustomBlurView: UIViewRepresentable {
     
@@ -92,7 +80,6 @@ struct WSGlassView_Previews: PreviewProvider {
                     
                 }, label: Text("Шикарная кнопка"))
             }
-            
         }
     }
 }
