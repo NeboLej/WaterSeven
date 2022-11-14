@@ -73,6 +73,7 @@ struct WSAllPlantsView: View {
                        viewModel.addPlant()
                    }
                 }
+               .padding(20)
             }
         }
         

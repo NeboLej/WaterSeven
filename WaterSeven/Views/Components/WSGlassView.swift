@@ -45,7 +45,7 @@ struct WSGlassView<Content>: View where Content : View {
             .shadow(color: .black.opacity(0.15), radius: 5, x: 10, y: -10)
             .overlay(content: {
                 content
-                    .padding(20)
+//                    .padding(20)
                     .shadow(radius: 5)
 //                    .blendMode(.overlay)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
