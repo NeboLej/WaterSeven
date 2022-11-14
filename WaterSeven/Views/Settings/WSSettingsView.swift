@@ -9,29 +9,88 @@ import SwiftUI
 
 struct WSSettingsView: View {
     
-    @State var date = Date()
-    @State var image = UIImage(named: "plant1")
-    @State var isEdit = false
+    @ObservedObject var viewModel: WSSettingsViewModel
+
+    
+    @State var pickerSection = 0
+    @State var slider = 1.0
+    @State var toggle = false
+    @State var tmp = false
+    var pickerContent = ["1", "2", "3"]
     
     var body: some View {
-        VStack {
-            Text("")
-            WSImageView(selectedImage: $image, isEdit: isEdit)
-            Button("asdasd") {
-                isEdit.toggle()
-            }
-        }
-        
-//        WSCalendarView(currentDate: $date)
-    }
-}
+        NavigationView
+        {
+            Form {
+                Section {
+                    Text("Секция 1")
+                        .fontWeight(.semibold)
+                    Text("Тема")
+                    Text("О приложении")
+                    Text("----------------------------")
 
-func color(fraction: Double) -> Color {
-    Color(red: fraction, green: 1 + fraction, blue: 0.5)
+                }
+
+                
+                Section{
+                    Text("Секция 2")
+                        .fontWeight(.semibold)
+                    Text("Что-то")
+                    Text("Что-то")
+                }
+                
+                
+                Section {
+                    Text("Секция 3")
+                        .fontWeight(.semibold)
+                    Picker(selection: $pickerSection) {
+                        ForEach(0..<pickerContent.count) {
+                            Text(pickerContent[$0])
+                        }
+                    } label: {
+                        Text("Пикер")
+                    }
+                    Text("Текст")
+                    Button {
+                        withAnimation(.easeInOut(duration: 1)) {
+                            tmp.toggle()
+                        }
+                        
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus")
+                                .foregroundColor(.black)
+                                .frame(width: 10)
+                            
+                            Text("Кнопка")
+                                .foregroundColor(.black)
+                        }
+                    }
+                    if tmp {
+                        Section {
+                            Text("sadasd")
+                            Text("sadasd")
+                            Text("sadasd")
+                        }
+                    }
+                    
+                    Slider(value: $slider, label: {
+                        Text("Слайдер")
+                    })
+                    
+                    Toggle(isOn: $toggle) {
+                        Text("Тогл")
+                    }
+                }
+
+            }
+            .navigationBarTitle("Настройки")
+        }
+    }
 }
 
 struct WSSettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        WSSettingsView()
+        WSSettingsView(viewModel: WSSettingsViewModel())
     }
 }
