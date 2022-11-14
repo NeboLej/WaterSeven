@@ -22,70 +22,11 @@ struct WSPlantSquareCell: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ZStack {
-                Image(vm.image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .clipped()
-                    .cornerRadius(20)
-                    .readSize { size in
-                        imageSize = size
-                    }
-                    .padding(.bottom, -imageSize.height/5)
-                if vm.isWatering {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color("background"), lineWidth: 2)
-                        Text("ПОЛИТО")
-                            .foregroundColor(Color("background"))
-                    }.frame(width: imageSize.width/1.5, height: 34)
-                        .rotationEffect(.init(radians: -.pi/9))
-
-                }
-            }
+            imageView
             .onTapGesture {
                 vm.onClick()
             }
-
-            VStack(alignment: .leading, spacing: 0) {
-                HStack(alignment: .center, spacing: 0) {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(vm.name)
-                            .foregroundColor(Color("background3"))
-                            .font(.custom(WSFont.medium, size: 15))
-                        Text(vm.comment)
-                            .foregroundColor(Color("background3"))
-                            .font(.custom(WSFont.light, size: 9))
-                    }
-                    Spacer()
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color("background3"))
-                            .frame(width: 46, height: 46)
-                            .overlay(content: {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color("backgroundFirst").opacity(0.3), lineWidth: 1)
-                                    .shadow(color: Color.black.opacity(0.7), radius: 1, x: 0, y: 1)
-                                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                                    .shadow(color: Color.black.opacity(0.2), radius: 1, x: 0, y: -1)
-                                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                            })
-                        Image(systemName: "checkmark")
-                            .foregroundColor(Color("backgroundFirst"))
-                    }
-                    .onTapGesture {
-                        vm.onClickSuccess()
-                    }
-                }
-                .padding(11)
-                .frame(height: 90)
-                
-            }
-            .frame(maxWidth: .infinity)
-            .background(Color("backgroundFirst").opacity(0.9))
-            .cornerRadius(20)
-            .shadow(color: .gray.opacity(0.4), radius: 2, x: 0, y: 5)
+            infoView
         }
             .overlay{
                 RoundedRectangle(cornerRadius: 20)
@@ -96,6 +37,74 @@ struct WSPlantSquareCell: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }
 //            .frame(maxWidth: 163, maxHeight: 222)
+    }
+    
+    @ViewBuilder
+    private var imageView: some View {
+        ZStack {
+            Image(vm.image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipped()
+                .cornerRadius(20)
+                .readSize { size in
+                    imageSize = size
+                }
+                .padding(.bottom, -imageSize.height/5)
+            if vm.isWatering {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color("background"), lineWidth: 2)
+                    Text("ПОЛИТО")
+                        .foregroundColor(Color("background"))
+                }.frame(width: imageSize.width/1.5, height: 34)
+                    .rotationEffect(.init(radians: -.pi/9))
+
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var infoView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .center, spacing: 0) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(vm.name)
+                        .foregroundColor(Color("background3"))
+                        .font(.custom(WSFont.medium, size: 15))
+                    Text(vm.comment)
+                        .foregroundColor(Color("background3"))
+                        .font(.custom(WSFont.light, size: 9))
+                }
+                Spacer()
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color("background3"))
+                        .frame(width: 46, height: 46)
+                        .overlay(content: {
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color("backgroundFirst").opacity(0.3), lineWidth: 1)
+                                .shadow(color: Color.black.opacity(0.7), radius: 1, x: 0, y: 1)
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
+                                .shadow(color: Color.black.opacity(0.2), radius: 1, x: 0, y: -1)
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
+                        })
+                    Image(systemName: "checkmark")
+                        .foregroundColor(Color("backgroundFirst"))
+                }
+                .onTapGesture {
+                    vm.onClickSuccess()
+                }
+            }
+            .padding(11)
+            .frame(height: 90)
+            
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color("backgroundFirst").opacity(0.9))
+        .cornerRadius(20)
+        .shadow(color: .gray.opacity(0.4), radius: 2, x: 0, y: 5)
     }
 }
 
