@@ -20,6 +20,9 @@ struct WaterSevenApp: App {
     var body: some Scene {
         WindowGroup {
 //            WSHomeView(viewModel: WSHomeViewModel())
+            
+            let _ = UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnstatisfiable")
+            let _ = print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path)
             WSTabView()
         }
     }

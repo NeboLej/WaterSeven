@@ -12,6 +12,9 @@
 		FA107335291EC77800B7E7C3 /* Blur +.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA107334291EC77800B7E7C3 /* Blur +.swift */; };
 		FA1AC31D291EB8C80023D330 /* WSGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC31C291EB8C80023D330 /* WSGlassView.swift */; };
 		FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA304769291264F8004E7292 /* WSRegimeView.swift */; };
+		FA315AB22926E97000CC8313 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FA315AB12926E97000CC8313 /* Realm */; };
+		FA315AB42926E97000CC8313 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA315AB32926E97000CC8313 /* RealmSwift */; };
+		FA315AB62926F7D700CC8313 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA315AB52926F7D700CC8313 /* RealmManager.swift */; };
 		FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4335D42909C25E000278A1 /* WSTextField.swift */; };
 		FA4CDFBD2914941300751AD3 /* WSPlantSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */; };
 		FA4CDFBF2914942C00751AD3 /* WSPlantSquareCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBE2914942C00751AD3 /* WSPlantSquareCellVM.swift */; };
@@ -65,6 +68,7 @@
 		FA107334291EC77800B7E7C3 /* Blur +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blur +.swift"; sourceTree = "<group>"; };
 		FA1AC31C291EB8C80023D330 /* WSGlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSGlassView.swift; sourceTree = "<group>"; };
 		FA304769291264F8004E7292 /* WSRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRegimeView.swift; sourceTree = "<group>"; };
+		FA315AB52926F7D700CC8313 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		FA4335D42909C25E000278A1 /* WSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTextField.swift; sourceTree = "<group>"; };
 		FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantSquareCell.swift; sourceTree = "<group>"; };
 		FA4CDFBE2914942C00751AD3 /* WSPlantSquareCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantSquareCellVM.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA315AB42926E97000CC8313 /* RealmSwift in Frameworks */,
+				FA315AB22926E97000CC8313 /* Realm in Frameworks */,
 				79ECC32884EE08A6FDB29186 /* Pods_WaterSeven.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +346,7 @@
 		FAF0810B28FC2D5E007091B1 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				FA315AB52926F7D700CC8313 /* RealmManager.swift */,
 				FAF0811228FC2F1E007091B1 /* WSReposlitoryLocal.swift */,
 			);
 			path = Local;
@@ -382,6 +389,10 @@
 			dependencies = (
 			);
 			name = WaterSeven;
+			packageProductDependencies = (
+				FA315AB12926E97000CC8313 /* Realm */,
+				FA315AB32926E97000CC8313 /* RealmSwift */,
+			);
 			productName = WaterSeven;
 			productReference = FAF080EE28FAFEB7007091B1 /* WaterSeven.app */;
 			productType = "com.apple.product-type.application";
@@ -410,6 +421,9 @@
 				Base,
 			);
 			mainGroup = FAF080E528FAFEB7007091B1;
+			packageReferences = (
+				FA315AB02926E96F00CC8313 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = FAF080EF28FAFEB7007091B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -493,6 +507,7 @@
 				FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */,
 				FA107335291EC77800B7E7C3 /* Blur +.swift in Sources */,
 				FAB81C09290EFFA7008FD888 /* View +.swift in Sources */,
+				FA315AB62926F7D700CC8313 /* RealmManager.swift in Sources */,
 				FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */,
 				FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */,
 				FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */,
@@ -731,6 +746,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA315AB02926E96F00CC8313 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA315AB12926E97000CC8313 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA315AB02926E96F00CC8313 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		FA315AB32926E97000CC8313 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA315AB02926E96F00CC8313 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAF080E628FAFEB7007091B1 /* Project object */;
 }
