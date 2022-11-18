@@ -110,11 +110,11 @@ struct WSPlantSquareCell: View {
 
 struct WSPlantSquareCell_Previews: PreviewProvider, WSPlantSquareActionProtocol {
     
-    func onClick(plantId: String) {
+    func onClick(plantId: UInt64) {
         
     }
     
-    func onClickSuccess(plantId: String) {
+    func onClickSuccess(plantId: UInt64) {
         print(plantId)
     }
     

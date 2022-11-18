@@ -48,7 +48,7 @@ class WSAllPlantsViewModel: WSViewModel, ObservableObject, WSPlantCellActionList
     }
     
     //MARK: - WSPlantCellActionListenerProtocol
-    func onClick(plantId: String) {
+    func onClick(plantId: UInt64) {
         guard let plant = plants.filter({ $0.id == plantId }).first else { return }
         plantSheet = WSPlantViewModel(plant: plant)
         isGoToPlantSheet = true

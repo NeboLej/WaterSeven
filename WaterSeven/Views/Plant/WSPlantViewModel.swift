@@ -10,7 +10,7 @@ import UIKit
 
 class WSPlantViewModel: WSViewModel, ObservableObject {
     
-    let id: String!
+    let id: UInt64!
     var name: String!
     var comment: String!
     var period: Int!
@@ -28,9 +28,9 @@ class WSPlantViewModel: WSViewModel, ObservableObject {
     init(plant: WSPlant) {
         id = plant.id
         name = plant.name
-        comment = plant.comment ?? ""
-        period = plant.period ?? 0
-        image = UIImage(named: plant.image ?? "")
+        comment = plant.comment
+        period = plant.period
+        image = UIImage(named: plant.image)
         calendarVM = WSCalendarVM(wateringDays: daysTest)
         super.init()
     }

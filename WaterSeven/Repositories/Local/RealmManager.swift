@@ -14,12 +14,7 @@ class RealmManager: ObservableObject {
     private(set) var localRealm: Realm?
     var tmpModels1: Published<[TmpModel]>
     let tmpModelsPublisher = CurrentValueSubject<[TmpModel], Never>([])
-    @Published var tmpModels: [TmpModel] = []  {
-        didSet {
-            print(oldValue)
-        }
-    }
-    
+    @Published var tmpModels: [TmpModel] = []
     
     init() {
         tmpModels1 = Published(initialValue: [])
@@ -30,7 +25,7 @@ class RealmManager: ObservableObject {
     
     func openRealm() {
         do {
-            let configuration = Realm.Configuration(schemaVersion: 1)
+            let configuration = Realm.Configuration(schemaVersion: 2)
             
             Realm.Configuration.defaultConfiguration = configuration
             
@@ -44,7 +39,7 @@ class RealmManager: ObservableObject {
     func addTmpModel(text: String) {
         if let localRealm = localRealm {
             do {
-                let newModel = TmpModel(value: ["title": text, "completed": false])
+                let newModel = TmpModel(value: ["title": text, "completed": false, "list": ["один", "два"] ])
                 
                 try localRealm.write {
                     localRealm.add(newModel)
@@ -106,5 +101,6 @@ class TmpModel: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var title = ""
     @Persisted var completed = false
+    @Persisted var list: List<String> = List<String>()
     
 }

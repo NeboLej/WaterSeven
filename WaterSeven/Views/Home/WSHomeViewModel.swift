@@ -11,6 +11,10 @@ import Combine
 
 class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtocol, WSPlantCellActionListenerProtocol {
 
+    let plantService: WSPlantServiceProtocol
+    
+
+    
     private let basePlants: [WSPlant] = [
 //        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
 //        WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ),
@@ -29,6 +33,10 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
 //        WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] )
     ]
     
+    private let basePlants1: [WSPlant] = [
+        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date(), getSampleDate(offset: 2), getSampleDate(offset: -2)] )
+    ]
+    
     @Published var realmManager = RealmManager()
     
 //    @Published var plants1: [WSPlantCellVM] = []
@@ -37,19 +45,15 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
     @Published var isGoToPlantSheet = false
     @Published var isGoToNewPlantSheet = false
     
-    @Published var tmpModels: [TmpModel2] = [] {
-        willSet {
-            print(newValue)
-        }
-    }
-    
+    @Published var tmpModels: [TmpModel2] = []
     private var cancellableSet: Set<AnyCancellable> = []
 
     
     var plantSheet: WSPlantViewModel!
     var newPlantSheet: WSNewPlantViewModel!
     
-    override init() {
+    init(servicesFactory: WSServicesFactoryProtocol) {
+        plantService = servicesFactory.plantService
         super.init()
         
         weak var _self = self
@@ -68,25 +72,23 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
             .store(in: &cancellableSet)
 
     }
-//    func updateBD() {
-//        tmpModels = realmManager.tmpModels
-//    }
     
     func addNewPlant() {
 //        newPlantSheet = WSNewPlantViewModel()
 //        isGoToNewPlantSheet = true
-        realmManager.addTmpModel(text: "Test Model 11111")
+//        realmManager.addTmpModel(text: "Test Model 11111")
 //        updateBD()
+        plantService.addPlant(basePlants1[0])
     }
     
     //MARK: - WSPlantSquareActionProtocol
-    func onClick(plantId: String) {
+    func onClick(plantId: UInt64) {
         guard let plant = basePlants.filter({ $0.id == plantId }).first else { return }
         plantSheet = WSPlantViewModel(plant: plant)
         isGoToPlantSheet = true
     }
     
-    func onClickSuccess(plantId: String) {
+    func onClickSuccess(plantId: UInt64) {
         let plant = plantsToday.filter{ $0.id == plantId }.first
         plant?.isWatering = true
     }

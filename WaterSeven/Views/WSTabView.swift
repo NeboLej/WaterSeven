@@ -9,7 +9,8 @@ import SwiftUI
 
 struct WSTabView: View {
     
-    @State var selectionTab = 1
+    @State private var selectionTab = 1
+    @ObservedObject var viewModel: WSTabViewModel
     
     var body: some View {
         TabView(selection: $selectionTab) {
@@ -18,7 +19,7 @@ struct WSTabView: View {
                 Image(systemName: "list.bullet")
                 Text("мои растения")
             }.tag(0)
-            WSHomeView(viewModel: WSHomeViewModel())
+            WSHomeView(viewModel: viewModel.getHomeViewModel())
                 .tabItem {
                 Image(systemName: "house")
                 Text("главная")
@@ -40,6 +41,6 @@ struct WSTabView: View {
 
 struct WSTabView_Previews: PreviewProvider {
     static var previews: some View {
-        WSTabView()
+        WSTabView(viewModel: WSTabViewModel(servicesFactory: WSServicesFactory()))
     }
 }

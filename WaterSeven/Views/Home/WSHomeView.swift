@@ -99,7 +99,7 @@ struct WSHomeView: View {
 
 struct WSHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WSHomeView(viewModel: WSHomeViewModel())
+        WSHomeView(viewModel: WSHomeViewModel(servicesFactory: WSServicesFactory()))
         //        emptyPlant
     }
 }

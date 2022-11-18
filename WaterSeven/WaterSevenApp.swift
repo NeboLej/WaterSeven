@@ -12,7 +12,7 @@ let screenSize = UIScreen.main.bounds
 @main
 struct WaterSevenApp: App {
     
-    let serviceFactory: WSServiceFactoryProtocol
+    let serviceFactory: WSServicesFactoryProtocol
     
     init() {
         serviceFactory = WSServicesFactory()
@@ -23,7 +23,7 @@ struct WaterSevenApp: App {
             
             let _ = UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnstatisfiable")
             let _ = print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path)
-            WSTabView()
+            WSTabView(viewModel: WSTabViewModel(servicesFactory: serviceFactory))
         }
     }
 }
