@@ -13,9 +13,8 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
 
     let plantService: WSPlantServiceProtocol
     
-
-    
-    private let basePlants: [WSPlant] = [
+    //TEST
+    private var basePlants: [WSPlant] = [
 //        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
 //        WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ),
 //        WSPlant(name: "вашему вниманию предоставляется", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
@@ -37,18 +36,13 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
         WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date(), getSampleDate(offset: 2), getSampleDate(offset: -2)] )
     ]
     
-    @Published var realmManager = RealmManager()
-    
-//    @Published var plants1: [WSPlantCellVM] = []
     @Published var plantsToday: [WSPlantSquareCellVM] = []
     @Published var plants: [WSPlantCellVM] = []
     @Published var isGoToPlantSheet = false
     @Published var isGoToNewPlantSheet = false
     
-    @Published var tmpModels: [TmpModel2] = []
     private var cancellableSet: Set<AnyCancellable> = []
 
-    
     var plantSheet: WSPlantViewModel!
     var newPlantSheet: WSNewPlantViewModel!
     
@@ -58,27 +52,21 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
         
         weak var _self = self
         
-//        tmpModels = realmManager.tmpModels
-//        plants1 = []
-        
         plantsToday = basePlants.map { WSPlantSquareCellVM(plant: $0, parent: _self) }
         plants = basePlants.map { WSPlantCellVM(plant: $0, parent: _self) }
         
-        
-        realmManager.tmpModelsPublisher
-            .sink { models in
-                self.tmpModels = models.map {TmpModel2(model: $0)}
+        plantService.plants
+            .sink {
+//                _self?.plants = $0.map { WSPlantCellVM(plant: $0, parent: _self) }
+                _self?.plantsToday = $0.map { WSPlantSquareCellVM(plant: $0, parent: _self) }
             }
             .store(in: &cancellableSet)
-
     }
     
     func addNewPlant() {
-//        newPlantSheet = WSNewPlantViewModel()
-//        isGoToNewPlantSheet = true
-//        realmManager.addTmpModel(text: "Test Model 11111")
-//        updateBD()
-        plantService.addPlant(basePlants1[0])
+        newPlantSheet = WSNewPlantViewModel(plantService: plantService)
+        isGoToNewPlantSheet = true
+//        plantService.addPlant(basePlants1[0])
     }
     
     //MARK: - WSPlantSquareActionProtocol
@@ -94,17 +82,3 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
     }
 }
 
-struct TmpModel2: Identifiable {
-    var text: String
-    var id: UInt64
-    
-    init(text: String) {
-        self.text = text
-        self.id = 2
-    }
-    
-    init(model: TmpModel) {
-        self.text = model.title
-        self.id = model.id
-    }
-}

@@ -43,7 +43,7 @@ class WSAllPlantsViewModel: WSViewModel, ObservableObject, WSPlantCellActionList
     }
     
     func addPlant() {
-        newPlantSheet = WSNewPlantViewModel()
+        newPlantSheet = WSNewPlantViewModel(plantService: WSPlantService(localRepository: WSStoreManager())) // tmp
         isGoToNewPlantSheet = true
     }
     

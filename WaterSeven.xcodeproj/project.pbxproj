@@ -17,6 +17,7 @@
 		FA2F9FF729283C5B00D710F6 /* WSStoreManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FF629283C5B00D710F6 /* WSStoreManagerProtocol.swift */; };
 		FA2F9FF929283D7A00D710F6 /* WSStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FF829283D7A00D710F6 /* WSStoreManager.swift */; };
 		FA2F9FFB2928493600D710F6 /* WSTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FFA2928493600D710F6 /* WSTabViewModel.swift */; };
+		FA2F9FFD2928658E00D710F6 /* WSImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FFC2928658E00D710F6 /* WSImageManager.swift */; };
 		FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA304769291264F8004E7292 /* WSRegimeView.swift */; };
 		FA315AB22926E97000CC8313 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FA315AB12926E97000CC8313 /* Realm */; };
 		FA315AB42926E97000CC8313 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA315AB32926E97000CC8313 /* RealmSwift */; };
@@ -78,6 +79,7 @@
 		FA2F9FF629283C5B00D710F6 /* WSStoreManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSStoreManagerProtocol.swift; sourceTree = "<group>"; };
 		FA2F9FF829283D7A00D710F6 /* WSStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSStoreManager.swift; sourceTree = "<group>"; };
 		FA2F9FFA2928493600D710F6 /* WSTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTabViewModel.swift; sourceTree = "<group>"; };
+		FA2F9FFC2928658E00D710F6 /* WSImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImageManager.swift; sourceTree = "<group>"; };
 		FA304769291264F8004E7292 /* WSRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRegimeView.swift; sourceTree = "<group>"; };
 		FA315AB52926F7D700CC8313 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		FA4335D42909C25E000278A1 /* WSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTextField.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				FAFE464F29155F7000CA54B2 /* WSCarouselView.swift */,
 				FA1AC31C291EB8C80023D330 /* WSGlassView.swift */,
 				FAB2F10F291EF7A300571279 /* WSLottieView.swift */,
+				FA2F9FFC2928658E00D710F6 /* WSImageManager.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */,
 				FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */,
 				FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */,
+				FA2F9FFD2928658E00D710F6 /* WSImageManager.swift in Sources */,
 				FA2F9FF029281B6500D710F6 /* WSPlantService.swift in Sources */,
 				FAF0812B29016E50007091B1 /* WSPlantCellVM.swift in Sources */,
 				FAD0715C290D9B4900EC71E7 /* WSCalendarView.swift in Sources */,

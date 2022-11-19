@@ -108,17 +108,9 @@ struct WSPlantSquareCell: View {
     }
 }
 
-struct WSPlantSquareCell_Previews: PreviewProvider, WSPlantSquareActionProtocol {
-    
-    func onClick(plantId: UInt64) {
-        
-    }
-    
-    func onClickSuccess(plantId: UInt64) {
-        print(plantId)
-    }
+struct WSPlantSquareCell_Previews: PreviewProvider {
     
     static var previews: some View {
-        WSPlantSquareCell(vm: WSPlantSquareCellVM(plant: WSPlant(name: "Фикус Георгий третий", comment: "комментарий короткий", image: "plant2", period: 0, wateringSchedule: [], history: [] ), parent: self))
+        WSPlantSquareCell(vm: WSPlantSquareCellVM(plant: WSPlant(name: "Фикус Георгий третий", comment: "комментарий короткий", image: "plant2", period: 0, wateringSchedule: [], history: [] ), parent: nil))
     }
 }

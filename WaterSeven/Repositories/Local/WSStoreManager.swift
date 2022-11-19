@@ -46,9 +46,11 @@ class WSStoreManager: WSStoreManagerProtocol {
         }
     }
     
-//    func getObjects(_ type: RealmSwift.Object.Type) -> [Object]? {
-//        <#code#>
-//    }
+    func getObjects<T>(_ type: T.Type) -> [T] where T: Object {
+        guard let realm = try? Realm() else { return [] }
+        let results = realm.objects(type)
+        return Array(results)
+    }
 //
 //    func getObjects<T>(_ type: T.Type, predicate: NSPredicate) -> [T]? where T : Object {
 //        <#code#>

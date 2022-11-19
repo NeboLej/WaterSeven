@@ -17,11 +17,6 @@ struct WSHomeView: View {
             WSTodayWaterView(wateringToday: viewModel.plantsToday.map{ $0.name })
                 .frame(height: screenSize.height / 2.7)
             
-            ForEach(viewModel.tmpModels) { model in
-                Text(model.text)
-                    .foregroundColor(.black)
-            }
-            
             if !viewModel.plantsToday.isEmpty {
                 ZStack(alignment: .center) {
                     Rectangle()

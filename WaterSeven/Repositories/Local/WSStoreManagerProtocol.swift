@@ -13,7 +13,7 @@ protocol WSStoreManagerProtocol {
     func saveObjects<T>(_ objects: [T]) where T: Object
     func saveObject<T>(_ object: T) where T: Object
     
-//    func getObjects(_ type: Object.Type) -> [Object]?
+    func getObjects<T>(_ type: T.Type) -> [T] where T: Object
 //    func getObjects<T>(_ type: T.Type, predicate: NSPredicate) -> [T]? where T: Object
 //    
 //    func updateObjects<T>(_ objects: [T]) throws where T: Object
