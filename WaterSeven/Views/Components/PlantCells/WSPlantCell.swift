@@ -48,6 +48,6 @@ struct WSPlantCell: View {
 
 struct WSPlantCellView_Previews: PreviewProvider {
     static var previews: some View {
-        WSPlantCell(vm: WSPlantCellVM(plant: WSPlant(name: "Привет Андрей", comment: "комментарий к растению", image: "plant2", period: 2, wateringSchedule: []), parent: self))
+        WSPlantCell(vm: WSPlantCellVM(plant: WSPlant(name: "Привет Андрей", comment: "комментарий к растению", image: "plant2", period: 2, wateringSchedule: []), parent: nil))
     }
 }

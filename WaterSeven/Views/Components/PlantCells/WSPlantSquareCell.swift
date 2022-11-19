@@ -16,8 +16,8 @@ struct WSPlantSquareCell: View {
     
     init(vm: WSPlantSquareCellVM) {
         self.vm = vm
-        self.imageSize = CGSize()
-        self.isWatering = vm.isWatering
+        imageSize = CGSize()
+        isWatering = vm.isWatering
     }
     
     var body: some View {
@@ -42,7 +42,7 @@ struct WSPlantSquareCell: View {
     @ViewBuilder
     private var imageView: some View {
         ZStack {
-            Image(vm.image)
+            Image(uiImage: UIImage(contentsOfFile: vm.imagePath) ?? UIImage(named: "defaultImage")! )
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .clipped()

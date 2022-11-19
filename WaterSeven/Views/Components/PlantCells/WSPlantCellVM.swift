@@ -21,10 +21,10 @@ class WSPlantCellVM: ObservableObject, Identifiable {
     private var parent: Any?
     
     init(plant: WSPlant, parent: Any?) {
-        self.id = plant.id
-        self.name = plant.name
-        self.image = plant.image
-        self.comment = plant.comment
+        id = plant.id
+        name = plant.name
+        image = plant.image
+        comment = plant.comment
         self.parent = parent
     }
     

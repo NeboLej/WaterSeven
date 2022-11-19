@@ -20,7 +20,7 @@ class WSPlantService: WSService, WSPlantServiceProtocol {
     let plants = CurrentValueSubject<[WSPlant], Never>([])
     
     init(localRepository: WSStoreManagerProtocol) {
-        self.repository = localRepository
+        repository = localRepository
         super.init()
         
         getPlants()

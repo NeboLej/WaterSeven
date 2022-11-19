@@ -45,6 +45,10 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
         self.picker.isPresented.wrappedValue.dismiss()
     }
     
+    deinit {
+        print("Coordinator DEINIT")
+    }
+    
 }
 
 struct ContentView: View {

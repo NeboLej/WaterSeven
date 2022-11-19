@@ -81,8 +81,8 @@ struct WSNewPlantView: View {
                 .foregroundColor(Color("background3"))
             Spacer()
             Button {
-//                dismiss()
                 viewModel.savePlant()
+                dismiss()      
             } label: {
                 Text("Сохранить")
                     .foregroundColor(Color("background3"))

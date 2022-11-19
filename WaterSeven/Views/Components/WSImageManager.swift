@@ -34,7 +34,7 @@ class WSImageManager {
         }
     }
 
-    func loadImageFromDiskWith(fileName: String) -> UIImage? {
+    func loadImageFromDiskWith(fileName: String) -> String? {
 
       let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
 
@@ -43,8 +43,8 @@ class WSImageManager {
 
         if let dirPath = paths.first {
             let imageUrl = URL(fileURLWithPath: dirPath).appendingPathComponent(fileName)
-            let image = UIImage(contentsOfFile: imageUrl.path)
-            return image
+//            let image = UIImage(contentsOfFile: imageUrl.path)
+            return imageUrl.path
 
         }
 
