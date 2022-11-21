@@ -21,13 +21,22 @@ struct WSPlantSquareCell: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        
+        ZStack(alignment: .top) {
             imageView
+                .frame(width: 190, height: 240)
+                .offset(y: -20)
             .onTapGesture {
                 vm.onClick()
             }
             infoView
+                .frame(width: 190)
+                .frame(maxHeight: .infinity, alignment: .bottom)
         }
+            
+            .frame(width: 190, height: 240)
+            .cornerRadius(20)
+            .clipped()
             .overlay{
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color("background"), lineWidth: 1)
@@ -36,21 +45,23 @@ struct WSPlantSquareCell: View {
                     .shadow(color: Color.black.opacity(0.3), radius: 1, x: 0, y: -3)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }
-//            .frame(maxWidth: 163, maxHeight: 222)
     }
+    
     
     @ViewBuilder
     private var imageView: some View {
         ZStack {
-            Image(uiImage: UIImage(contentsOfFile: vm.imagePath) ?? UIImage(named: "defaultImage")! )
+            Image(uiImage: UIImage(contentsOfFile: vm.imagePath) ?? UIImage(named: "plant1")! )
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipped()
-                .cornerRadius(20)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                
                 .readSize { size in
                     imageSize = size
                 }
-                .padding(.bottom, -imageSize.height/5)
+                .onTapGesture {
+                    vm.onClick()
+                }
             if vm.isWatering {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
@@ -98,10 +109,7 @@ struct WSPlantSquareCell: View {
                 }
             }
             .padding(11)
-            .frame(height: 90)
-            
         }
-        .frame(maxWidth: .infinity)
         .background(Color("backgroundFirst").opacity(0.9))
         .cornerRadius(20)
         .shadow(color: .gray.opacity(0.4), radius: 2, x: 0, y: 5)

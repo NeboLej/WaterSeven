@@ -15,15 +15,16 @@ class WSPlantCellVM: ObservableObject, Identifiable {
     
     let id: UInt64
     @Published var name: String
-    @Published var image: String
+    @Published var imagePath: String
     @Published var comment: String
     
     private var parent: Any?
+    private let imageManager = WSImageManager()
     
     init(plant: WSPlant, parent: Any?) {
         id = plant.id
         name = plant.name
-        image = plant.image
+        imagePath =  imageManager.loadImageFromDiskWith(fileName: plant.image) ?? ""
         comment = plant.comment
         self.parent = parent
     }

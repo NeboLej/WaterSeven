@@ -5,7 +5,7 @@
 //  Created by Nebo on 04.11.2022.
 //
 
-import UIKit
+import Foundation
 
 protocol WSPlantSquareActionProtocol {
     func onClick(plantId: UInt64)

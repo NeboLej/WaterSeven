@@ -14,7 +14,7 @@ struct WSPlantCell: View {
     
     var body: some View {
         HStack {
-            Image(vm.image)
+            Image(uiImage: UIImage(contentsOfFile: vm.imagePath) ?? UIImage(named: "plant1")!)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             

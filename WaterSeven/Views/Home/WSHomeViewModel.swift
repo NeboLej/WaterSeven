@@ -31,10 +31,7 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
 //        WSPlant(name: "Олег44", comment: "коммент", image: "plant2", period: 1, wateringSchedule: [] ),
 //        WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] )
     ]
-    
-    private let basePlants1: [WSPlant] = [
-        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date(), getSampleDate(offset: 2), getSampleDate(offset: -2)] )
-    ]
+
     
     @Published var plantsToday: [WSPlantSquareCellVM] = []
     @Published var plants: [WSPlantCellVM] = []
@@ -57,8 +54,9 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
         
         plantService.plants
             .sink {
-//                _self?.plants = $0.map { WSPlantCellVM(plant: $0, parent: _self) }
+                _self?.plants = $0.map { WSPlantCellVM(plant: $0, parent: _self) }
                 _self?.plantsToday = $0.map { WSPlantSquareCellVM(plant: $0, parent: _self) }
+                _self?.basePlants = $0.map { $0 }
             }
             .store(in: &cancellableSet)
     }
@@ -66,7 +64,6 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
     func addNewPlant() {
         newPlantSheet = WSNewPlantViewModel(plantService: plantService)
         isGoToNewPlantSheet = true
-//        plantService.addPlant(basePlants1[0])
     }
     
     //MARK: - WSPlantSquareActionProtocol
@@ -78,7 +75,7 @@ class WSHomeViewModel: WSViewModel, ObservableObject, WSPlantSquareActionProtoco
     
     func onClickSuccess(plantId: UInt64) {
         let plant = plantsToday.filter{ $0.id == plantId }.first
-        plant?.isWatering = true
+        plant?.isWatering.toggle()
     }
 }
 
