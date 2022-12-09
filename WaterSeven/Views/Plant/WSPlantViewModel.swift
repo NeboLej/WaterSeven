@@ -10,11 +10,14 @@ import UIKit
 
 class WSPlantViewModel: WSViewModel, ObservableObject {
     
-    let id: String!
+    let id: UInt64!
     var name: String!
     var comment: String!
     var period: Int!
     @Published var image: UIImage?
+    @Published var calendarVM: WSCalendarVM
+    
+    private let imageManager = WSImageManager()
     
     var daysTest: [Date] = [
         getSampleDate(offset: -1),
@@ -23,15 +26,15 @@ class WSPlantViewModel: WSViewModel, ObservableObject {
         getSampleDate(offset: -7),
         getSampleDate(offset: 0),
     ]
-    @Published var calendarVM: WSCalendarVM
+    
     
     init(plant: WSPlant) {
         id = plant.id
         name = plant.name
-        comment = plant.comment ?? ""
-        period = plant.period ?? 0
-        image = UIImage(named: plant.image ?? "")
-        calendarVM = WSCalendarVM(wateringDays: daysTest)
+        comment = plant.comment
+        period = plant.period
+        image = UIImage(contentsOfFile: imageManager.loadImageFromDiskWith(fileName: plant.image) ?? "") // UIImage(named: plant.image)
+        calendarVM = WSCalendarVM(wateringDays: plant.history)
         super.init()
     }
     

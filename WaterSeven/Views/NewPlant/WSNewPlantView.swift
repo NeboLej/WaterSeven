@@ -81,7 +81,8 @@ struct WSNewPlantView: View {
                 .foregroundColor(Color("background3"))
             Spacer()
             Button {
-                dismiss()
+                viewModel.savePlant()
+                dismiss()      
             } label: {
                 Text("Сохранить")
                     .foregroundColor(Color("background3"))
@@ -96,6 +97,6 @@ struct WSNewPlantView: View {
 
 struct WSNewPlantView_Previews: PreviewProvider {
     static var previews: some View {
-        WSNewPlantView(viewModel: .init())
+        WSNewPlantView(viewModel: .init(plantService: WSPlantService(localRepository: WSStoreManager())))
     }
 }

@@ -8,23 +8,24 @@
 import Foundation
 
 protocol WSPlantCellActionListenerProtocol {
-    func onClick(plantId: String)
+    func onClick(plantId: UInt64)
 }
 
 class WSPlantCellVM: ObservableObject, Identifiable {
     
-    let id: String
+    let id: UInt64
     @Published var name: String
-    @Published var image: String
+    @Published var imagePath: String
     @Published var comment: String
     
     private var parent: Any?
+    private let imageManager = WSImageManager()
     
     init(plant: WSPlant, parent: Any?) {
-        self.id = plant.id
-        self.name = plant.name
-        self.image = plant.image ?? ""
-        self.comment = plant.comment ?? ""
+        id = plant.id
+        name = plant.name
+        imagePath =  imageManager.loadImageFromDiskWith(fileName: plant.image) ?? ""
+        comment = plant.comment
         self.parent = parent
     }
     

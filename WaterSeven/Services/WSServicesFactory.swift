@@ -7,6 +7,19 @@
 
 import Foundation
 
-class WSServicesFactory: WSServiceFactoryProtocol {
+protocol WSServicesFactoryProtocol {
     
+    var plantService: WSPlantServiceProtocol { get }
+}
+
+class WSServicesFactory: WSServicesFactoryProtocol {
+    
+    var plantService: WSPlantServiceProtocol
+    private let storeManager: WSStoreManagerProtocol
+    
+    init() {
+        storeManager = WSStoreManager()
+        plantService = WSPlantService(localRepository: storeManager)
+        
+    }
 }

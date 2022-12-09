@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct WSHomeView: View {
-    
     @ObservedObject var viewModel: WSHomeViewModel
     @State private var animationAmount = 0.0
     
@@ -94,7 +94,7 @@ struct WSHomeView: View {
 
 struct WSHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WSHomeView(viewModel: WSHomeViewModel())
+        WSHomeView(viewModel: WSHomeViewModel(servicesFactory: WSServicesFactory()))
         //        emptyPlant
     }
 }

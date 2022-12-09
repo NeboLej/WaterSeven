@@ -7,6 +7,6 @@
 
 import Foundation
 
-class WSServiceFactoryMock: WSServiceFactoryProtocol {
-    
-}
+//class WSServiceFactoryMock: WSServiceFactoryProtocol {
+//    
+//}

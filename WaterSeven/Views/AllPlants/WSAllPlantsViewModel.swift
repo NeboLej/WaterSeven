@@ -43,12 +43,12 @@ class WSAllPlantsViewModel: WSViewModel, ObservableObject, WSPlantCellActionList
     }
     
     func addPlant() {
-        newPlantSheet = WSNewPlantViewModel()
+        newPlantSheet = WSNewPlantViewModel(plantService: WSPlantService(localRepository: WSStoreManager())) // tmp
         isGoToNewPlantSheet = true
     }
     
     //MARK: - WSPlantCellActionListenerProtocol
-    func onClick(plantId: String) {
+    func onClick(plantId: UInt64) {
         guard let plant = plants.filter({ $0.id == plantId }).first else { return }
         plantSheet = WSPlantViewModel(plant: plant)
         isGoToPlantSheet = true

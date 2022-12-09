@@ -11,7 +11,17 @@
 		FA0FF1DA290B393000D599A3 /* WSCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */; };
 		FA107335291EC77800B7E7C3 /* Blur +.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA107334291EC77800B7E7C3 /* Blur +.swift */; };
 		FA1AC31D291EB8C80023D330 /* WSGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AC31C291EB8C80023D330 /* WSGlassView.swift */; };
+		FA2F9FF029281B6500D710F6 /* WSPlantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FEF29281B6500D710F6 /* WSPlantService.swift */; };
+		FA2F9FF229281C6200D710F6 /* WSPlantRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FF129281C6200D710F6 /* WSPlantRepository.swift */; };
+		FA2F9FF42928202300D710F6 /* WSPlantStored.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FF32928202300D710F6 /* WSPlantStored.swift */; };
+		FA2F9FF729283C5B00D710F6 /* WSStoreManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FF629283C5B00D710F6 /* WSStoreManagerProtocol.swift */; };
+		FA2F9FF929283D7A00D710F6 /* WSStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FF829283D7A00D710F6 /* WSStoreManager.swift */; };
+		FA2F9FFB2928493600D710F6 /* WSTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FFA2928493600D710F6 /* WSTabViewModel.swift */; };
+		FA2F9FFD2928658E00D710F6 /* WSImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F9FFC2928658E00D710F6 /* WSImageManager.swift */; };
 		FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA304769291264F8004E7292 /* WSRegimeView.swift */; };
+		FA315AB22926E97000CC8313 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FA315AB12926E97000CC8313 /* Realm */; };
+		FA315AB42926E97000CC8313 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA315AB32926E97000CC8313 /* RealmSwift */; };
+		FA315AB62926F7D700CC8313 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA315AB52926F7D700CC8313 /* RealmManager.swift */; };
 		FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4335D42909C25E000278A1 /* WSTextField.swift */; };
 		FA4CDFBD2914941300751AD3 /* WSPlantSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */; };
 		FA4CDFBF2914942C00751AD3 /* WSPlantSquareCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CDFBE2914942C00751AD3 /* WSPlantSquareCellVM.swift */; };
@@ -43,8 +53,7 @@
 		FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810C28FC2D8F007091B1 /* WSServicesFactory.swift */; };
 		FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0810E28FC2DE1007091B1 /* WSService.swift */; };
 		FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811028FC2F00007091B1 /* WSRepository.swift */; };
-		FAF0811328FC2F1E007091B1 /* WSReposlitoryLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811228FC2F1E007091B1 /* WSReposlitoryLocal.swift */; };
-		FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811428FC3096007091B1 /* WSServiceFactoryProtocol.swift */; };
+		FAF0811328FC2F1E007091B1 /* WSRepositoryLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811228FC2F1E007091B1 /* WSRepositoryLocal.swift */; };
 		FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811628FC313E007091B1 /* WSViewModel.swift */; };
 		FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */; };
 		FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */; };
@@ -64,7 +73,15 @@
 		FA0FF1D9290B393000D599A3 /* WSCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCalendarCell.swift; sourceTree = "<group>"; };
 		FA107334291EC77800B7E7C3 /* Blur +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Blur +.swift"; sourceTree = "<group>"; };
 		FA1AC31C291EB8C80023D330 /* WSGlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSGlassView.swift; sourceTree = "<group>"; };
+		FA2F9FEF29281B6500D710F6 /* WSPlantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantService.swift; sourceTree = "<group>"; };
+		FA2F9FF129281C6200D710F6 /* WSPlantRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantRepository.swift; sourceTree = "<group>"; };
+		FA2F9FF32928202300D710F6 /* WSPlantStored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantStored.swift; sourceTree = "<group>"; };
+		FA2F9FF629283C5B00D710F6 /* WSStoreManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSStoreManagerProtocol.swift; sourceTree = "<group>"; };
+		FA2F9FF829283D7A00D710F6 /* WSStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSStoreManager.swift; sourceTree = "<group>"; };
+		FA2F9FFA2928493600D710F6 /* WSTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTabViewModel.swift; sourceTree = "<group>"; };
+		FA2F9FFC2928658E00D710F6 /* WSImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImageManager.swift; sourceTree = "<group>"; };
 		FA304769291264F8004E7292 /* WSRegimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRegimeView.swift; sourceTree = "<group>"; };
+		FA315AB52926F7D700CC8313 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		FA4335D42909C25E000278A1 /* WSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTextField.swift; sourceTree = "<group>"; };
 		FA4CDFBC2914941300751AD3 /* WSPlantSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantSquareCell.swift; sourceTree = "<group>"; };
 		FA4CDFBE2914942C00751AD3 /* WSPlantSquareCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantSquareCellVM.swift; sourceTree = "<group>"; };
@@ -97,8 +114,7 @@
 		FAF0810C28FC2D8F007091B1 /* WSServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServicesFactory.swift; sourceTree = "<group>"; };
 		FAF0810E28FC2DE1007091B1 /* WSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSService.swift; sourceTree = "<group>"; };
 		FAF0811028FC2F00007091B1 /* WSRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRepository.swift; sourceTree = "<group>"; };
-		FAF0811228FC2F1E007091B1 /* WSReposlitoryLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSReposlitoryLocal.swift; sourceTree = "<group>"; };
-		FAF0811428FC3096007091B1 /* WSServiceFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServiceFactoryProtocol.swift; sourceTree = "<group>"; };
+		FAF0811228FC2F1E007091B1 /* WSRepositoryLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRepositoryLocal.swift; sourceTree = "<group>"; };
 		FAF0811628FC313E007091B1 /* WSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSViewModel.swift; sourceTree = "<group>"; };
 		FAF0811828FC3270007091B1 /* WSHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSHomeViewModel.swift; sourceTree = "<group>"; };
 		FAF0811A28FC3D84007091B1 /* WSServiceFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSServiceFactoryMock.swift; sourceTree = "<group>"; };
@@ -116,6 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA315AB42926E97000CC8313 /* RealmSwift in Frameworks */,
+				FA315AB22926E97000CC8313 /* Realm in Frameworks */,
 				79ECC32884EE08A6FDB29186 /* Pods_WaterSeven.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +156,14 @@
 				F59E6F3D529D000BEC442CE4 /* Pods_WaterSeven.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA2F9FF52928202A00D710F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA2F9FF32928202300D710F6 /* WSPlantStored.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FA4CDFBB2914939D00751AD3 /* PlantCells */ = {
@@ -258,6 +284,7 @@
 			children = (
 				FAF63765290D431D00F49694 /* Plant */,
 				FAD642262902CEAC009E8F98 /* NewPlant */,
+				FA2F9FFA2928493600D710F6 /* WSTabViewModel.swift */,
 				FA9D17A7290184F8006BB413 /* WSTabView.swift */,
 				FA9D179A290181C1006BB413 /* Home */,
 				FA9D179D290183F9006BB413 /* AllPlants */,
@@ -287,6 +314,7 @@
 				FAFE464F29155F7000CA54B2 /* WSCarouselView.swift */,
 				FA1AC31C291EB8C80023D330 /* WSGlassView.swift */,
 				FAB2F10F291EF7A300571279 /* WSLottieView.swift */,
+				FA2F9FFC2928658E00D710F6 /* WSImageManager.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -313,9 +341,9 @@
 		FAF0810828FC2CF9007091B1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FAF0811428FC3096007091B1 /* WSServiceFactoryProtocol.swift */,
 				FAF0810C28FC2D8F007091B1 /* WSServicesFactory.swift */,
 				FAF0810E28FC2DE1007091B1 /* WSService.swift */,
+				FA2F9FEF29281B6500D710F6 /* WSPlantService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -323,6 +351,7 @@
 		FAF0810928FC2D09007091B1 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				FA2F9FF52928202A00D710F6 /* Models */,
 				FAF0810B28FC2D5E007091B1 /* Local */,
 				FAF0810A28FC2D4D007091B1 /* Network */,
 				FAF0811028FC2F00007091B1 /* WSRepository.swift */,
@@ -340,7 +369,11 @@
 		FAF0810B28FC2D5E007091B1 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				FAF0811228FC2F1E007091B1 /* WSReposlitoryLocal.swift */,
+				FA2F9FF629283C5B00D710F6 /* WSStoreManagerProtocol.swift */,
+				FA2F9FF829283D7A00D710F6 /* WSStoreManager.swift */,
+				FA315AB52926F7D700CC8313 /* RealmManager.swift */,
+				FAF0811228FC2F1E007091B1 /* WSRepositoryLocal.swift */,
+				FA2F9FF129281C6200D710F6 /* WSPlantRepository.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -382,6 +415,10 @@
 			dependencies = (
 			);
 			name = WaterSeven;
+			packageProductDependencies = (
+				FA315AB12926E97000CC8313 /* Realm */,
+				FA315AB32926E97000CC8313 /* RealmSwift */,
+			);
 			productName = WaterSeven;
 			productReference = FAF080EE28FAFEB7007091B1 /* WaterSeven.app */;
 			productType = "com.apple.product-type.application";
@@ -410,6 +447,9 @@
 				Base,
 			);
 			mainGroup = FAF080E528FAFEB7007091B1;
+			packageReferences = (
+				FA315AB02926E96F00CC8313 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = FAF080EF28FAFEB7007091B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -481,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9F35F22902EAF3007B1194 /* WSImagePickerView.swift in Sources */,
+				FA2F9FF929283D7A00D710F6 /* WSStoreManager.swift in Sources */,
 				FA1AC31D291EB8C80023D330 /* WSGlassView.swift in Sources */,
 				FA9D17A42901848A006BB413 /* WSSettingsViewModel.swift in Sources */,
 				FAF081272900997B007091B1 /* WSPlantCell.swift in Sources */,
@@ -489,17 +530,21 @@
 				FAF63769290D434500F49694 /* WSPlantView.swift in Sources */,
 				FAF080F428FAFEB7007091B1 /* WSHomeView.swift in Sources */,
 				FA9D17A8290184F8006BB413 /* WSTabView.swift in Sources */,
-				FAF0811528FC3096007091B1 /* WSServiceFactoryProtocol.swift in Sources */,
 				FAF080F228FAFEB7007091B1 /* WaterSevenApp.swift in Sources */,
 				FA107335291EC77800B7E7C3 /* Blur +.swift in Sources */,
 				FAB81C09290EFFA7008FD888 /* View +.swift in Sources */,
+				FA315AB62926F7D700CC8313 /* RealmManager.swift in Sources */,
 				FA9D17A629018498006BB413 /* WSSettingsView.swift in Sources */,
 				FAF0811128FC2F00007091B1 /* WSRepository.swift in Sources */,
 				FA9D179F29018429006BB413 /* WSAllPlantsViewModel.swift in Sources */,
 				FA4335D52909C25E000278A1 /* WSTextField.swift in Sources */,
 				FAF0811728FC313E007091B1 /* WSViewModel.swift in Sources */,
+				FA2F9FFD2928658E00D710F6 /* WSImageManager.swift in Sources */,
+				FA2F9FF029281B6500D710F6 /* WSPlantService.swift in Sources */,
 				FAF0812B29016E50007091B1 /* WSPlantCellVM.swift in Sources */,
 				FAD0715C290D9B4900EC71E7 /* WSCalendarView.swift in Sources */,
+				FA2F9FF229281C6200D710F6 /* WSPlantRepository.swift in Sources */,
+				FA2F9FF42928202300D710F6 /* WSPlantStored.swift in Sources */,
 				FAF0811928FC3270007091B1 /* WSHomeViewModel.swift in Sources */,
 				FAF6376B290D453300F49694 /* WSImageView.swift in Sources */,
 				FAF0811B28FC3D84007091B1 /* WSServiceFactoryMock.swift in Sources */,
@@ -507,13 +552,15 @@
 				FA9D17A129018449006BB413 /* WSAllPlantsView.swift in Sources */,
 				FAF0810D28FC2D8F007091B1 /* WSServicesFactory.swift in Sources */,
 				FA4CDFC12914953100751AD3 /* WSPlant.swift in Sources */,
-				FAF0811328FC2F1E007091B1 /* WSReposlitoryLocal.swift in Sources */,
+				FAF0811328FC2F1E007091B1 /* WSRepositoryLocal.swift in Sources */,
+				FA2F9FF729283C5B00D710F6 /* WSStoreManagerProtocol.swift in Sources */,
 				FAFE465029155F7000CA54B2 /* WSCarouselView.swift in Sources */,
 				FAF0810428FB06F8007091B1 /* WSTodayWaterView.swift in Sources */,
 				FAD07161290E040D00EC71E7 /* WSCalendarVM.swift in Sources */,
 				FAF0810728FC2BCC007091B1 /* WSFont.swift in Sources */,
 				FA5DE2A82909EF350069CFA5 /* WSWateringRegimeView.swift in Sources */,
 				FAD6422A2902CEE6009E8F98 /* WSNewPlantView.swift in Sources */,
+				FA2F9FFB2928493600D710F6 /* WSTabViewModel.swift in Sources */,
 				FA30476A291264F8004E7292 /* WSRegimeView.swift in Sources */,
 				FAF0810F28FC2DE1007091B1 /* WSService.swift in Sources */,
 				FA5DE2A62909E9CA0069CFA5 /* WSLeafView.swift in Sources */,
@@ -731,6 +778,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA315AB02926E96F00CC8313 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA315AB12926E97000CC8313 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA315AB02926E96F00CC8313 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		FA315AB32926E97000CC8313 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA315AB02926E96F00CC8313 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAF080E628FAFEB7007091B1 /* Project object */;
 }

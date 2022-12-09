@@ -8,25 +8,26 @@
 import Foundation
 
 protocol WSPlantSquareActionProtocol {
-    func onClick(plantId: String)
-    func onClickSuccess(plantId: String)
+    func onClick(plantId: UInt64)
+    func onClickSuccess(plantId: UInt64)
 }
 
 class WSPlantSquareCellVM: ObservableObject , Identifiable {
     
-    let id: String
+    let id: UInt64
     let parent: Any?
     @Published var name: String
     @Published var comment: String
-    @Published var image: String
+    @Published var imagePath: String
     @Published var isWatering: Bool
     
+    let imageManager = WSImageManager()
     
     init(plant: WSPlant, parent: Any?) {
         id = plant.id
         name = plant.name
-        comment = plant.comment ?? ""
-        image = plant.image ?? ""
+        comment = plant.comment
+        imagePath =  imageManager.loadImageFromDiskWith(fileName: plant.image) ?? ""//plant.image
         isWatering = plant.history.map{ $0.isSameDay(date: Date()) }.contains(true)
         self.parent = parent
     }
