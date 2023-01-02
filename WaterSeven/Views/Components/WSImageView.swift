@@ -23,7 +23,7 @@ struct WSImageView: View {
                     Image(uiImage: selectedImage!)
                         .resizable()
                         .frame(maxWidth: .infinity)
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
  
                     if isEdit {
                         VStack() {

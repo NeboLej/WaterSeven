@@ -64,7 +64,7 @@ struct Scroll: View {
             let minY = proxy.frame(in: .named("SCROLL")).minY
             let progress = minY / (height*0.8)
             
-            Image("plant2")
+            Image("plant3")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: size.width, height: size.height + (minY > 0 ? minY : 1))
