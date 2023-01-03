@@ -33,7 +33,7 @@ class WSPlantViewModel: WSViewModel, ObservableObject {
         name = plant.name
         comment = plant.comment
         period = plant.period
-        image = UIImage(named: "plant2")//UIImage(contentsOfFile: imageManager.loadImageFromDiskWith(fileName: plant.image) ?? "") // UIImage(named: plant.image)
+        image = UIImage(contentsOfFile: imageManager.loadImageFromDiskWith(fileName: plant.image) ?? "") // UIImage(named: plant.image)
         calendarVM = WSCalendarVM(wateringDays: plant.history)
         super.init()
     }

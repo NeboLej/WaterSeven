@@ -103,16 +103,12 @@ fileprivate struct Content: View {
                     ZStack(alignment: .bottom) {
                         //GRADIENT OVERLAY
                         Rectangle()
-                            .fill(
-                                .linearGradient(colors: [
-                                    .black.opacity(0 - progress),
-                                    .black.opacity(0.1 - progress),
-                                    .black.opacity(0.3 - progress),
-                                    .black.opacity(0.5 - progress),
-                                    .black.opacity(0.8 - progress),
-                                    .black.opacity(1)
-                                ], startPoint: .top, endPoint: .bottom)
-                            )
+                            .fill(.linearGradient(colors: [
+                                Color("backgroundFirst").opacity(0 - progress),
+                                Color("backgroundFirst").opacity(0.1 - progress),
+                                Color("backgroundFirst").opacity(0.3 - progress),
+                                Color("backgroundFirst").opacity(0.4 - progress)
+                            ], startPoint: .top, endPoint: .bottom))
                     }
                 })
                 .offset(y: -minY)

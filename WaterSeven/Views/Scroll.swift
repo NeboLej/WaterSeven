@@ -162,11 +162,11 @@ struct EPContentView: View {
     }
 }
 
-//struct Scroll_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EPContentView()
-//    }
-//}
+struct Scroll_Previews: PreviewProvider {
+    static var previews: some View {
+        EPContentView()
+    }
+}
 
 
 //test
@@ -180,6 +180,13 @@ var albums: [Album]  =
 [
     Album(name: "Gthdsasd"),
     Album(name: "afsa f"),
+    Album(name: "Gthdasd asd asasd"),
+    Album(name: "Gthdasd dasasd"),
+    Album(name: "dfg d"),
+    Album(name: "fdgfgj h"),
+    Album(name: "cx sad e"),
+    Album(name: "asd "),
+    Album(name: "ertyuuyh "),
     Album(name: "Gthdasd asd asasd"),
     Album(name: "Gthdasd dasasd"),
     Album(name: "dfg d"),
