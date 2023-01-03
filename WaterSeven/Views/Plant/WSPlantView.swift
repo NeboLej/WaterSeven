@@ -15,12 +15,12 @@ struct WSPlantView: View {
         GeometryReader {
             let safeArea = $0.safeAreaInsets
             let size = $0.size
-            WSContent(viewModel: viewModel, safeArea: safeArea, size: size)
+            Content(viewModel: viewModel, safeArea: safeArea, size: size)
         }
     }
 }
 
-fileprivate struct WSContent: View {
+fileprivate struct Content: View {
     
     @Environment(\.dismiss) private var dismiss
     @State var isEditing = false
@@ -39,7 +39,7 @@ fileprivate struct WSContent: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 0) {
-                imageView(selectedImage: $viewModel.image, isEdit: isEditing)
+                imagePickerView(selectedImage: $viewModel.image, isEdit: isEditing)
                 label()
                 VStack(alignment: .leading, spacing: 0) {
                     if isEditing {
@@ -53,6 +53,7 @@ fileprivate struct WSContent: View {
                 header()
             }
         }
+        .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(1), Color("backgroundFirst").opacity(0.6)]), startPoint: .top, endPoint: .bottom))
     }
     
     @ViewBuilder
@@ -133,11 +134,10 @@ fileprivate struct WSContent: View {
             WSRegimeView(isEdit: false)
         }
         .padding()
-        .background(LinearGradient(gradient: Gradient(colors: [Color("backgroundFirst").opacity(0.9), Color("backgroundFirst").opacity(0)]), startPoint: .top, endPoint: .bottom))
     }
     
     @ViewBuilder
-    func imageView(selectedImage: Binding<UIImage?>, isEdit: Bool) -> some View {
+    func imagePickerView(selectedImage: Binding<UIImage?>, isEdit: Bool) -> some View {
         let height = size.height * 0.45
         
         GeometryReader{ proxy in
