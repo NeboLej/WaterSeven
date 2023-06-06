@@ -126,6 +126,7 @@
 		FAF63766290D433400F49694 /* WSPlantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantViewModel.swift; sourceTree = "<group>"; };
 		FAF63768290D434500F49694 /* WSPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSPlantView.swift; sourceTree = "<group>"; };
 		FAF6376A290D453300F49694 /* WSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSImageView.swift; sourceTree = "<group>"; };
+		FAFC71E9296C8BC50099D470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FAFE464F29155F7000CA54B2 /* WSCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -261,6 +262,7 @@
 		FAF080F028FAFEB7007091B1 /* WaterSeven */ = {
 			isa = PBXGroup;
 			children = (
+				FAFC71E9296C8BC50099D470 /* Info.plist */,
 				FAF0810128FAFF65007091B1 /* Models */,
 				FAF080FF28FAFF4A007091B1 /* Views */,
 				FAF0810928FC2D09007091B1 /* Repositories */,
@@ -706,6 +708,7 @@
 				DEVELOPMENT_TEAM = 955DP87LHM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterSeven/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "we need camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -739,6 +742,7 @@
 				DEVELOPMENT_TEAM = 955DP87LHM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterSeven/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "we need camera permission";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

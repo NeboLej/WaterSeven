@@ -99,18 +99,18 @@ fileprivate struct Content: View {
             WSImageView(selectedImage: selectedImage, isEdit: isEdit)
                 .frame(width: size.width, height: size.height + (minY > 0 ? minY : 1))
                 .clipped()
-                .overlay(content: {
-                    ZStack(alignment: .bottom) {
-                        //GRADIENT OVERLAY
-                        Rectangle()
-                            .fill(.linearGradient(colors: [
-                                Color("backgroundFirst").opacity(0 - progress),
-                                Color("backgroundFirst").opacity(0.1 - progress),
-                                Color("backgroundFirst").opacity(0.3 - progress),
-                                Color("backgroundFirst").opacity(0.4 - progress)
-                            ], startPoint: .top, endPoint: .bottom))
-                    }
-                })
+//                .overlay(content: {
+//                    ZStack(alignment: .bottom) {
+//                        //GRADIENT OVERLAY
+//                        Rectangle()
+//                            .fill(.linearGradient(colors: [
+//                                Color("backgroundFirst").opacity(0 - progress),
+//                                Color("backgroundFirst").opacity(0.1 - progress),
+//                                Color("backgroundFirst").opacity(0.3 - progress),
+//                                Color("backgroundFirst").opacity(0.4 - progress)
+//                            ], startPoint: .top, endPoint: .bottom))
+//                    }
+//                })
                 .offset(y: -minY)
         }
         .frame(height: height + safeArea.top)
