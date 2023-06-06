@@ -102,5 +102,4 @@ class TmpModel: Object, ObjectKeyIdentifiable {
     @Persisted var title = ""
     @Persisted var completed = false
     @Persisted var list: List<String> = List<String>()
-    
 }

@@ -10,21 +10,12 @@ import Foundation
 class WSAllPlantsViewModel: WSViewModel, ObservableObject, WSPlantCellActionListenerProtocol {
    
     let plants: [WSPlant] = [
-        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
-        WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ),
-        WSPlant(name: "вашему вниманию предоставляется", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
-        WSPlant(name: "Олег44", comment: "коммент", image: "plant2", period: 1, wateringSchedule: [] ),
-        WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] ),
-        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
-        WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ),
-        WSPlant(name: "Цветок", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
-        WSPlant(name: "Олег44", comment: "коммент", image: "plant2", period: 1, wateringSchedule: [] ),
-        WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] ),
-        WSPlant(name: "Олег", comment: "коммент", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
-        WSPlant(name: "Олег Бодрый", comment: "комментарий", image: "plant2", period: 1, wateringSchedule: [] ),
-        WSPlant(name: "Цветок", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
-        WSPlant(name: "Олег44", comment: "коммент", image: "plant2", period: 1, wateringSchedule: [] ),
-        WSPlant(name: "Не Олег", comment: "вашему вниманию предоставляется", image: "plant1", period: 1, wateringSchedule: [] )
+        WSPlant(name: "Plant1", comment: "comment", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
+        WSPlant(name: "Plant2", comment: "comment", image: "plant2", period: 1, wateringSchedule: [] ),
+        WSPlant(name: "Plant3", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
+        WSPlant(name: "Plant4", comment: "comment", image: "plant2", period: 1, wateringSchedule: [] ),
+        WSPlant(name: "Plant5", comment: "comment comment comment comment", image: "plant1", period: 1, wateringSchedule: [] ),
+        WSPlant(name: "Plant6", comment: "", image: "plant1", period: 1, wateringSchedule: [], history: [Date()] ),
     ]
     
     var plantSheet: WSPlantViewModel!
